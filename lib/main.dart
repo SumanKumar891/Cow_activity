@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
 
                 FadeTransition(
                   opacity: _fadeAnimation,
-                  child: TypewriterAnimatedText('Mooofarm, Dairy ka kaam asaan krke ', textStyle: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic)),
+                  child: TypewriterAnimatedText('Mooofarm, Dairy ka kaam asaan kare ', textStyle: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic)),
                 ),
                 SizedBox(height: 40),
 
@@ -144,12 +144,12 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               ],
             ),
             Align(
-              alignment: Alignment.bottomRight,
+              alignment: Alignment.topLeft,
               child: Container(
                 margin: EdgeInsets.all(16),
                 child: Image.network(
-                  width: 60,
-                  height: 60,
+                  width: 50,
+                  height: 50,
                   'https://pbs.twimg.com/profile_images/1457950809623187463/N8F-A4xt_400x400.jpg',
                 ),
               ),
@@ -234,6 +234,148 @@ class AnimatedLoginDialog extends StatefulWidget {
 
 
 
+/*
+                //'https://play-lh.googleusercontent.com/3MFgunnGnKN0Spr8LoJ0GYB1QiZjypyNekoLsFtLu7_QibLpJBSrYWddPNnccpOYQ7yY=w240-h480-rw',
+                'https://m.media-amazon.com/images/I/41wR0kC65SL.jpg',
+                //'https://thumbs.dreamstime.com/b/basic-rgb-143120196.jpg',
+                //'https://previews.123rf.com/images/f1digitals/f1digitals1903/f1digitals190300771/120383221-vector-cartoon-illustration-of-punjabi-farmer-with-plough-isolated-on-white-background.jpg',
+
+ */
+
+
+
+
+class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _dialogAnimationController;
+  late Animation<double> _fadeAnimation;
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    _dialogAnimationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 400),
+    );
+
+    _fadeAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(
+      CurvedAnimation(
+        parent: _dialogAnimationController,
+        curve: Curves.easeIn,
+      ),
+    );
+
+    _dialogAnimationController.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _dialogAnimationController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeTransition(
+      opacity: _fadeAnimation,
+      child: Dialog(
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Welcome to Moofarm',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 20),
+              Image.network('https://play-lh.googleusercontent.com/3MFgunnGnKN0Spr8LoJ0GYB1QiZjypyNekoLsFtLu7_QibLpJBSrYWddPNnccpOYQ7yY=w240-h480-rw',
+              width: 70,
+              height: 70,
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  labelText: 'Enter FarmerID',
+                ),
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  labelText: 'Enter Password',
+                ),
+                obscureText: true,
+              ),
+              SizedBox(height: 20),
+             /* ElevatedButton(
+                onPressed: () {
+                  // Check if email and password are not null
+                  final email = _emailController.text.trim();
+                  final password = _passwordController.text.trim();
+                  if (email.isNotEmpty && password.isNotEmpty) {
+                    // Add login logic here
+
+                    // Navigate to the third page
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ThirdPage()),
+                    );
+                  } else {
+                    // Show a snackbar or toast indicating that email and password are required
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Email and password are required.')),
+                    );
+                  }
+                },
+                child: Text('Login'),
+              ),*/
+
+              ElevatedButton(
+                onPressed: () {
+                  // Check if email and password are correct ('hello')
+                  final email = _emailController.text.trim();
+                  final password = _passwordController.text.trim();
+                  if (email == 'awadh' && password == 'awadh') {
+                    // Add login logic here
+
+                    // Navigate to the third page
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ThirdPage()),
+                    );
+                  } else {
+                    // Show a snackbar or toast indicating that email and password are incorrect
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Invalid email or password!')),
+                    );
+                  }
+                },
+                child: Text('Login'),
+              ),
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+/*
 
 class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
     with SingleTickerProviderStateMixin {
@@ -287,25 +429,25 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
               ),
               SizedBox(height: 20),
               Image.network(
-                'https://play-lh.googleusercontent.com/3MFgunnGnKN0Spr8LoJ0GYB1QiZjypyNekoLsFtLu7_QibLpJBSrYWddPNnccpOYQ7yY=w240-h480-rw',
-                //'https://m.media-amazon.com/images/I/41wR0kC65SL.jpg',
+                //'https://play-lh.googleusercontent.com/3MFgunnGnKN0Spr8LoJ0GYB1QiZjypyNekoLsFtLu7_QibLpJBSrYWddPNnccpOYQ7yY=w240-h480-rw',
+                'https://m.media-amazon.com/images/I/41wR0kC65SL.jpg',
                 //'https://thumbs.dreamstime.com/b/basic-rgb-143120196.jpg',
                 //'https://previews.123rf.com/images/f1digitals/f1digitals1903/f1digitals190300771/120383221-vector-cartoon-illustration-of-punjabi-farmer-with-plough-isolated-on-white-background.jpg',
-                width: 100,
-                height: 100,
+                width: 50,
+                height: 50,
               ),
               SizedBox(height: 20),
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'FarmerID',
-                  prefixIcon: Icon(Icons.email),
+                  labelText: 'Enter FarmerID',
+                  //prefixIcon: Icon(Icons.email),
                 ),
               ),
               SizedBox(height: 20),
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'Password',
-                  prefixIcon: Icon(Icons.lock),
+                  labelText: 'Enter Password',
+                  //prefixIcon: Icon(Icons.lock),
                 ),
                 obscureText: true,
               ),
@@ -329,7 +471,7 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
     );
   }
 }
-
+*/
 
 
 class ThirdPage extends StatelessWidget {
@@ -607,12 +749,7 @@ class NewPage extends StatelessWidget {
             SizedBox(height: 20), // Add spacing below the button
             TableWidget(),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Add button click logic here
-              },
-              child: Text('Download '),
-            ),// Use the custom TableWidget to display the table
+           // Use the custom TableWidget to display the table
           ],
         ),
       ),
@@ -624,7 +761,7 @@ class NewPage extends StatelessWidget {
 
 
 
-
+/*
 class TableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -672,6 +809,356 @@ class TableWidget extends StatelessWidget {
     );
   }
 }
+*/
+
+
+
+
+
+
+
+
+
+//Working epoch date and time controller
+/*
+class TableWidget extends StatefulWidget {
+  @override
+  _TableWidgetState createState() => _TableWidgetState();
+}
+
+class _TableWidgetState extends State<TableWidget> {
+  TextEditingController _dateTimeController1 = TextEditingController();
+  TextEditingController _dateTimeController2 = TextEditingController();
+
+  int? epochTime1; // Variable to save the EPOCH time for the first selected date and time
+  int? epochTime2; // Variable to save the EPOCH time for the second selected date and time
+
+  @override
+  void initState() {
+    super.initState();
+    // Add listeners to the text editing controllers to detect changes
+    _dateTimeController1.addListener(() => _updateDateTime1());
+    _dateTimeController2.addListener(() => _updateDateTime2());
+  }
+
+  @override
+  void dispose() {
+    _dateTimeController1.dispose();
+    _dateTimeController2.dispose();
+    super.dispose();
+  }
+
+  void _updateDateTime1() {
+    if (_dateTimeController1.text.isNotEmpty) {
+      final DateTime selectedDateTime1 = DateTime.parse(_dateTimeController1.text);
+      setState(() {
+        epochTime1 = selectedDateTime1.millisecondsSinceEpoch;
+        print('Selected Date and Time 1 (EPOCH time): $epochTime1');
+      });
+    } else {
+      setState(() {
+        epochTime1 = null;
+        print('Date and Time 1 not selected.');
+      });
+    }
+  }
+
+  void _updateDateTime2() {
+    if (_dateTimeController2.text.isNotEmpty) {
+      final DateTime selectedDateTime2 = DateTime.parse(_dateTimeController2.text);
+      setState(() {
+        epochTime2 = selectedDateTime2.millisecondsSinceEpoch;
+        print('Selected Date and Time 2 (EPOCH time): $epochTime2');
+      });
+    } else {
+      setState(() {
+        epochTime2 = null;
+        print('Date and Time 2 not selected.');
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TextFormField(
+          controller: _dateTimeController1,
+          onTap: () => _selectDateTime(context, _dateTimeController1),
+          readOnly: true,
+          decoration: InputDecoration(
+            labelText: 'Date and Time 1',
+            suffixIcon: Icon(Icons.calendar_today),
+          ),
+        ),
+        SizedBox(height: 20),
+        TextFormField(
+          controller: _dateTimeController2,
+          onTap: () => _selectDateTime(context, _dateTimeController2),
+          readOnly: true,
+          decoration: InputDecoration(
+            labelText: 'Date and Time 2',
+            suffixIcon: Icon(Icons.calendar_today),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Future<void> _selectDateTime(BuildContext context, TextEditingController controller) async {
+    final DateTime? pickedDateTime = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+    if (pickedDateTime != null) {
+      TimeOfDay? pickedTime = await showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.now(),
+      );
+      if (pickedTime != null) {
+        final DateTime combinedDateTime = DateTime(
+          pickedDateTime.year,
+          pickedDateTime.month,
+          pickedDateTime.day,
+          pickedTime.hour,
+          pickedTime.minute,
+        );
+        setState(() {
+          controller.text = combinedDateTime.toString();
+        });
+      }
+    }
+  }
+}
+*/
+
+
+
+
+class TableWidget extends StatefulWidget {
+  @override
+  _TableWidgetState createState() => _TableWidgetState();
+}
+
+class _TableWidgetState extends State<TableWidget> {
+  TextEditingController _dateTimeController1 = TextEditingController();
+  TextEditingController _dateTimeController2 = TextEditingController();
+
+  int? epochTime1; // Variable to save the EPOCH time for the first selected date and time
+  int? epochTime2; // Variable to save the EPOCH time for the second selected date and time
+
+  @override
+  void initState() {
+    super.initState();
+    // Add listeners to the text editing controllers to detect changes
+    _dateTimeController1.addListener(() => _updateDateTime1());
+    _dateTimeController2.addListener(() => _updateDateTime2());
+  }
+
+  @override
+  void dispose() {
+    _dateTimeController1.dispose();
+    _dateTimeController2.dispose();
+    super.dispose();
+  }
+
+  void _updateDateTime1() {
+    if (_dateTimeController1.text.isNotEmpty) {
+      final DateTime selectedDateTime1 = DateTime.parse(_dateTimeController1.text);
+      setState(() {
+        epochTime1 = selectedDateTime1.millisecondsSinceEpoch;
+        print('Selected Date and Time 1 (EPOCH time): $epochTime1');
+      });
+    } else {
+      setState(() {
+        epochTime1 = null;
+        print('Date and Time 1 not selected.');
+      });
+    }
+  }
+
+  void _updateDateTime2() {
+    if (_dateTimeController2.text.isNotEmpty) {
+      final DateTime selectedDateTime2 = DateTime.parse(_dateTimeController2.text);
+      setState(() {
+        epochTime2 = selectedDateTime2.millisecondsSinceEpoch;
+        print('Selected Date and Time 2 (EPOCH time): $epochTime2');
+      });
+    } else {
+      setState(() {
+        epochTime2 = null;
+        print('Date and Time 2 not selected.');
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TextFormField(
+          controller: _dateTimeController1,
+          onTap: () => _selectDateTime(context, _dateTimeController1),
+          readOnly: true,
+          decoration: InputDecoration(
+            labelText: 'Date and Time 1',
+            suffixIcon: Icon(Icons.calendar_today),
+          ),
+        ),
+        SizedBox(height: 20),
+        TextFormField(
+          controller: _dateTimeController2,
+          onTap: () => _selectDateTime(context, _dateTimeController2),
+          readOnly: true,
+          decoration: InputDecoration(
+            labelText: 'Date and Time 2',
+            suffixIcon: Icon(Icons.calendar_today),
+          ),
+        ),
+        SizedBox(height: 20),
+        /*ElevatedButton(
+          onPressed: () {
+            // This is the function that will be called when the user submits the form
+            // You can use epochTime1 and epochTime2 here as needed
+            // For demonstration purposes, we are printing the epoch times to the console again
+            if (epochTime1 != null) {
+              print('Selected Date and Time 1 (EPOCH time): $epochTime1');
+            } else {
+              print('Date and Time 1 not selected.');
+            }
+            if (epochTime2 != null) {
+              print('Selected Date and Time 2 (EPOCH time): $epochTime2');
+            } else {
+              print('Date and Time 2 not selected.');
+            }
+          },
+          child: Text('Submit'), // Changed the button text to "Submit"
+        ),*/
+        ElevatedButton(
+          onPressed: () {
+            if (epochTime1 != null && epochTime2 != null) {
+              // Navigate to the DataTablePage when both dates are selected
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DataTablePage()),
+              );
+            } else {
+              print('Please select both Date and Time first.');
+            }
+          },
+          child: Text('Submit'), // Changed the button text to "Submit"
+        ),
+
+      ],
+    );
+  }
+
+  Future<void> _selectDateTime(BuildContext context, TextEditingController controller) async {
+    final DateTime? pickedDateTime = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+    if (pickedDateTime != null) {
+      TimeOfDay? pickedTime = await showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.now(),
+      );
+      if (pickedTime != null) {
+        final DateTime combinedDateTime = DateTime(
+          pickedDateTime.year,
+          pickedDateTime.month,
+          pickedDateTime.day,
+          pickedTime.hour,
+          pickedTime.minute,
+        );
+        setState(() {
+          controller.text = combinedDateTime.toString();
+        });
+      }
+    }
+  }
+}
+
+
+
+
+
+class DataTablePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Data '),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            DataTable(
+              columns: [
+                DataColumn(label: Text('Start Time',style: TextStyle(fontWeight: FontWeight.bold),)),
+                DataColumn(label: Text('End Time',style: TextStyle(fontWeight: FontWeight.bold),)),
+                DataColumn(label: Text('Status',style: TextStyle(fontWeight: FontWeight.bold),)),
+              ],
+              rows: [
+                DataRow(cells: [
+                  DataCell(Text('8:00:00')),
+                  DataCell(Text('10:00:00')),
+                  DataCell(Text('Grazing')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('10:00:01')),
+                  DataCell(Text('12:00:00')),
+                  DataCell(Text('Sleeping')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('12:00:02')),
+                  DataCell(Text('14:00:00')),
+                  DataCell(Text('Sitting')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('14:00:01')),
+                  DataCell(Text('18:00:00')),
+                  DataCell(Text('Running')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('18:00:02')),
+                  DataCell(Text('20:00:00')),
+                  DataCell(Text('Mooing')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('20:00:02')),
+                  DataCell(Text('24:00:00')),
+                  DataCell(Text('Sleeping')),
+                ]),
+
+
+                // Add more rows as needed
+              ],
+            ),
+            SizedBox(height: 20), // Add some spacing between the table and the download button
+            ElevatedButton(
+              onPressed: () {
+                // Add the download logic here
+                print('Download button clicked!');
+              },
+              child: Text('Download'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
 
 
 
