@@ -296,15 +296,18 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20),
-              Image.network('https://play-lh.googleusercontent.com/3MFgunnGnKN0Spr8LoJ0GYB1QiZjypyNekoLsFtLu7_QibLpJBSrYWddPNnccpOYQ7yY=w240-h480-rw',
-              width: 70,
-              height: 70,
+              Image.network(
+                'https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg',
+                //'https://play-lh.googleusercontent.com/3MFgunnGnKN0Spr8LoJ0GYB1QiZjypyNekoLsFtLu7_QibLpJBSrYWddPNnccpOYQ7yY=w240-h480-rw',
+               //'https://toppng.com/uploads/preview/black-and-white-stockportable-network-account-icon-11553436383dwuayhjyvo.png',
+                width: 80,
+              height: 80,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  labelText: 'Enter FarmerID',
+                  labelText: 'Enter Farmer ID',
                 ),
               ),
               SizedBox(height: 20),
@@ -716,7 +719,7 @@ class CustomFloatingWindow extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'CowId: $nodeId',
+                'Cow ID: $nodeId',
                 style: TextStyle(fontSize: 16),
               ),
               ElevatedButton(
@@ -1003,8 +1006,8 @@ class _TableWidgetState extends State<TableWidget> {
           onTap: () => _selectDateTime(context, _dateTimeController1),
           readOnly: true,
           decoration: InputDecoration(
-            labelText: 'Date and Time 1',
-            suffixIcon: Icon(Icons.calendar_today),
+            labelText: 'Select start date and time',
+            //suffixIcon: Icon(Icons.calendar_today),
           ),
         ),
         SizedBox(height: 20),
@@ -1013,8 +1016,8 @@ class _TableWidgetState extends State<TableWidget> {
           onTap: () => _selectDateTime(context, _dateTimeController2),
           readOnly: true,
           decoration: InputDecoration(
-            labelText: 'Date and Time 2',
-            suffixIcon: Icon(Icons.calendar_today),
+            labelText: 'Select end date and time',
+            //suffixIcon: Icon(Icons.calendar_today),
           ),
         ),
         SizedBox(height: 20),
