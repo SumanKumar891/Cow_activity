@@ -21,6 +21,8 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
+//the very first page that appears on the screen with
+//mooofarm logo and continue button
 class _LoginPageState extends State<LoginPage>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
@@ -81,6 +83,7 @@ class _LoginPageState extends State<LoginPage>
                   child: SlideTransition(
                     position: _slideAnimation,
                     child: SizedBox(
+                      //mooofarm logo size and img
                       width: 200,
                       height: 200,
                       child: Image.network(
@@ -103,6 +106,7 @@ class _LoginPageState extends State<LoginPage>
                 ),
                 SizedBox(height: 40),
 
+                //animations given for the fade appearing of continue button
                 FadeTransition(
                   opacity: _fadeAnimation,
                   child: Center(
@@ -139,6 +143,7 @@ class _LoginPageState extends State<LoginPage>
                 // Animated Text
               ],
             ),
+            //on top left corner AWADH logo is placed
             Align(
               alignment: Alignment.topLeft,
               child: Container(
@@ -157,6 +162,7 @@ class _LoginPageState extends State<LoginPage>
   }
 }
 
+//auto typing text animation (Mooofarm, Diary ka kaam asaan kare)
 class TypewriterAnimatedText extends StatefulWidget {
   final String text;
   final TextStyle textStyle;
@@ -167,6 +173,8 @@ class TypewriterAnimatedText extends StatefulWidget {
   _TypewriterAnimatedTextState createState() => _TypewriterAnimatedTextState();
 }
 
+
+//auto typing text animation (Mooofarm, Diary ka kaam asaan kare)
 class _TypewriterAnimatedTextState extends State<TypewriterAnimatedText>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;

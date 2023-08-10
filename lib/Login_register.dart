@@ -3,11 +3,15 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'NodeList.dart';
 
+
+//this is the second page
 class SeparatePage extends StatefulWidget {
   @override
   _SeparatePageState createState() => _SeparatePageState();
 }
 
+
+//login and rehgister page context(page 2)
 class _SeparatePageState extends State<SeparatePage>
     with SingleTickerProviderStateMixin {
   late AnimationController _dialogAnimationController;
@@ -69,11 +73,14 @@ class _SeparatePageState extends State<SeparatePage>
   }
 }
 
+
+//popped up animation or floating window for second page
 class AnimatedLoginDialog extends StatefulWidget {
   @override
   _AnimatedLoginDialogState createState() => _AnimatedLoginDialogState();
 }
 
+//popped up animation or floating window for second page
 class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
     with SingleTickerProviderStateMixin {
   late AnimationController _dialogAnimationController;
@@ -235,6 +242,7 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
   }
 }
 
+//forget password page, opens on clicking the highlighted forget password text link
 class ForgetPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -255,6 +263,7 @@ class ForgetPasswordPage extends StatelessWidget {
   }
 }
 
+//new farmer ID registeration
 class RegisterPage extends StatefulWidget {
   @override
   _RegisterPageState createState() => _RegisterPageState();
