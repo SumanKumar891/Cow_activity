@@ -1,15 +1,23 @@
+/*
+
+    Sarthak @2023
+
+ */
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'NodeList.dart';
-
+import 'main.dart';
 
 //this is the second page
-class SeparatePage extends StatefulWidget {
-  @override
-  _SeparatePageState createState() => _SeparatePageState();
-}
 
+class SeparatePage extends StatefulWidget {
+  final AppLocalizations appLocalizations;
+  SeparatePage(this.appLocalizations);
+  @override
+  _SeparatePageState createState() => _SeparatePageState(appLocalizations);
+}
 
 //login and rehgister page context(page 2)
 class _SeparatePageState extends State<SeparatePage>
@@ -17,6 +25,8 @@ class _SeparatePageState extends State<SeparatePage>
   late AnimationController _dialogAnimationController;
   late Animation<double> _fadeAnimation;
 
+  final AppLocalizations appLocalizations;
+  _SeparatePageState(this.appLocalizations);
   @override
   void initState() {
     _dialogAnimationController = AnimationController(
@@ -44,7 +54,7 @@ class _SeparatePageState extends State<SeparatePage>
         builder: (context) => Center(
           child: SizedBox(
             width: 300, // Set the width of the login dialog
-            child: AnimatedLoginDialog(),
+            child: AnimatedLoginDialog(appLocalizations),
           ),
         ),
       );
@@ -67,15 +77,16 @@ class _SeparatePageState extends State<SeparatePage>
           },
           child: Icon(Icons.arrow_back),
         ),
-        title: Text(' Login '),
+        title: Text(appLocalizations.localizedValues['login']),
       ),
     );
   }
 }
 
-
 //popped up animation or floating window for second page
 class AnimatedLoginDialog extends StatefulWidget {
+  final AppLocalizations appLocalizations;
+  AnimatedLoginDialog(this.appLocalizations);
   @override
   _AnimatedLoginDialogState createState() => _AnimatedLoginDialogState();
 }
@@ -88,11 +99,12 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  void _openRegisterPage(BuildContext context) {
+  void _openRegisterPage(
+      BuildContext context, AppLocalizations appLocalizations) {
     showDialog(
       context: context,
       builder: (context) {
-        return RegisterPage();
+        return RegisterPage(appLocalizations);
       },
     ).then((value) {
       // Handle the registration data here if needed.
@@ -105,10 +117,12 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
     });
   }
 
-  void _openForgetPasswordPage(BuildContext context) {
+  void _openForgetPasswordPage(
+      BuildContext context, AppLocalizations appLocalizations) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ForgetPasswordPage()),
+      MaterialPageRoute(
+          builder: (context) => ForgetPasswordPage(appLocalizations)),
     );
   }
 
@@ -141,7 +155,8 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
     super.dispose();
   }
 
-  Future<void> _callLoginApi(BuildContext context) async {
+  Future<void> _callLoginApi(
+      BuildContext context, AppLocalizations appLocalizations) async {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
 
@@ -159,7 +174,9 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
           );
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ThirdPage(email: email)),
+            MaterialPageRoute(
+                builder: (context) => ThirdPage(
+                    email: email, appLocalizations: appLocalizations)),
           );
         } else if (response.statusCode == 401) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -191,7 +208,7 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Welcome to Moofarm',
+                widget.appLocalizations.localizedValues['login_page_welcome'],
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20),
@@ -200,37 +217,43 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
               TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  labelText: 'Enter FarmerID',
+                  labelText: widget
+                      .appLocalizations.localizedValues['enter_Farmer_ID'],
                 ),
               ),
               SizedBox(height: 20),
               TextFormField(
                 controller: _passwordController,
                 decoration: InputDecoration(
-                  labelText: 'Enter Password',
+                  labelText:
+                      widget.appLocalizations.localizedValues['enter_password'],
                 ),
                 obscureText: true,
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () => _callLoginApi(context),
-                child: Text('Login'),
+                onPressed: () =>
+                    _callLoginApi(context, widget.appLocalizations),
+                child: Text(widget.appLocalizations.localizedValues['login']),
               ),
               SizedBox(height: 50),
               ElevatedButton(
-                onPressed: () => _openRegisterPage(context),
+                onPressed: () =>
+                    _openRegisterPage(context, widget.appLocalizations),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.red, // Background color
                 ),
-                child: Text('Register'),
+                child:
+                    Text(widget.appLocalizations.localizedValues['register']),
               ),
               SizedBox(
                   height:
                       10), // Add space between the buttons and the text link
               TextButton(
-                onPressed: () => _openForgetPasswordPage(context),
+                onPressed: () =>
+                    _openForgetPasswordPage(context, widget.appLocalizations),
                 child: Text(
-                  'Forget Password?',
+                  widget.appLocalizations.localizedValues['forget_passwd'],
                   style: TextStyle(color: Colors.blue),
                 ),
               ),
@@ -244,6 +267,8 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
 
 //forget password page, opens on clicking the highlighted forget password text link
 class ForgetPasswordPage extends StatelessWidget {
+  final AppLocalizations appLocalizations;
+  ForgetPasswordPage(this.appLocalizations);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -254,7 +279,7 @@ class ForgetPasswordPage extends StatelessWidget {
           },
           child: Icon(Icons.arrow_back),
         ),
-        title: Text('Forget Password'),
+        title: Text(appLocalizations.localizedValues['forget_passwd']),
       ),
       body: Center(
         child: Text('Site under maintenance'),
@@ -265,6 +290,8 @@ class ForgetPasswordPage extends StatelessWidget {
 
 //new farmer ID registeration
 class RegisterPage extends StatefulWidget {
+  final AppLocalizations appLocalizations;
+  RegisterPage(this.appLocalizations);
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -354,7 +381,8 @@ class _RegisterPageState extends State<RegisterPage> {
             TextFormField(
               controller: _nameController,
               decoration: InputDecoration(
-                labelText: 'Enter Name',
+                labelText:
+                    widget.appLocalizations.localizedValues['enter_name'],
               ),
               onChanged: (value) {
                 setState(() {
@@ -366,7 +394,8 @@ class _RegisterPageState extends State<RegisterPage> {
             TextFormField(
               controller: _emailController,
               decoration: InputDecoration(
-                labelText: 'Set User ID/Farmer ID',
+                labelText:
+                    widget.appLocalizations.localizedValues['set_farmer_id'],
               ),
               onChanged: (value) {
                 setState(() {
@@ -378,7 +407,8 @@ class _RegisterPageState extends State<RegisterPage> {
             TextFormField(
               controller: _passwordController,
               decoration: InputDecoration(
-                labelText: 'Set Password',
+                labelText:
+                    widget.appLocalizations.localizedValues['set_Password'],
               ),
               onChanged: (value) {
                 setState(() {
@@ -391,7 +421,8 @@ class _RegisterPageState extends State<RegisterPage> {
             TextFormField(
               controller: _reenterPasswordController,
               decoration: InputDecoration(
-                labelText: 'Re-enter Password',
+                labelText:
+                    widget.appLocalizations.localizedValues['re_enter_passwd'],
               ),
               onChanged: (value) {
                 setState(() {
@@ -403,7 +434,7 @@ class _RegisterPageState extends State<RegisterPage> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () => _callApiAndRegister(context),
-              child: Text('Register'),
+              child: Text(widget.appLocalizations.localizedValues['register']),
             ),
           ],
         ),

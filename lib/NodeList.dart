@@ -1,5 +1,8 @@
+/*
 
+    Sarthak @2023
 
+ */
 
 /*
 import 'package:flutter/material.dart';
@@ -344,25 +347,6 @@ class _ThirdPageState extends State<ThirdPage> {
 
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -710,6 +694,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'DataFetchAPI.dart';
+import 'main.dart';
 
 class Cow {
   final String nodeId;
@@ -719,7 +704,8 @@ class Cow {
 
 class ThirdPage extends StatefulWidget {
   final String email;
-  ThirdPage({required this.email});
+  final AppLocalizations appLocalizations;
+  ThirdPage({required this.email, required this.appLocalizations});
 
   @override
   _ThirdPageState createState() => _ThirdPageState();
@@ -729,12 +715,14 @@ class CustomFloatingWindow extends StatelessWidget {
   final String nodeId;
   final String imagePath;
   final String buttonText;
+  final String cowIdText;
   final VoidCallback onButtonPressed;
 
   CustomFloatingWindow({
     required this.nodeId,
     required this.imagePath,
     required this.buttonText,
+    required this.cowIdText,
     required this.onButtonPressed,
   });
 
@@ -745,7 +733,7 @@ class CustomFloatingWindow extends StatelessWidget {
         children: [
           Image.network(imagePath),
           ListTile(
-            title: Text('Cow ID: $nodeId'),
+            title: Text('$cowIdText : $nodeId'),
             trailing: ElevatedButton(
               onPressed: onButtonPressed,
               child: Text(buttonText),
@@ -833,7 +821,7 @@ class _ThirdPageState extends State<ThirdPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('MY ALL COWS'),
+        title: Text(widget.appLocalizations.localizedValues['my_cows']),
       ),
       body: ListView(
         padding: EdgeInsets.all(paddingValue),
@@ -849,7 +837,8 @@ class _ThirdPageState extends State<ThirdPage> {
               icon: Icon(Icons.arrow_back),
               onPressed: previousPage,
             ),
-            Text('Page ${currentPage + 1}'),
+            Text(
+                '${widget.appLocalizations.localizedValues['page']} ${currentPage + 1}'),
             IconButton(
               icon: Icon(Icons.arrow_forward),
               onPressed: nextPage,
@@ -930,25 +919,29 @@ class _ThirdPageState extends State<ThirdPage> {
       child: Column(
         children: [
           CustomFloatingWindow(
-            nodeId: displayedCowId.toString(),
-            imagePath:
-            'https://upload.wikimedia.org/wikipedia/commons/0/0c/Cow_female_black_white.jpg',
-            buttonText: 'Click Here',
-            onButtonPressed: () {
-              print('Clicked on Displayed Cow ID: $displayedCowId');
-              print('Original Cow ID: $originalCowId');
-              navigateToNewPage(context, originalCowId.toString());
-            },
-          ),
+              nodeId: displayedCowId.toString(),
+              imagePath:
+                  'https://upload.wikimedia.org/wikipedia/commons/0/0c/Cow_female_black_white.jpg',
+              buttonText: widget.appLocalizations.localizedValues['click_here'],
+              onButtonPressed: () {
+                print('Clicked on Displayed Cow ID: $displayedCowId');
+                print('Original Cow ID: $originalCowId');
+                navigateToNewPage(
+                    context, originalCowId.toString(), widget.appLocalizations);
+              },
+              cowIdText: widget.appLocalizations.localizedValues['cow_id']),
         ],
       ),
     );
   }
 
-  void navigateToNewPage(BuildContext context, String originalCowId) {
+  void navigateToNewPage(BuildContext context, String originalCowId,
+      AppLocalizations appLocalizations) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => NewPage(nodeId: originalCowId)),
+      MaterialPageRoute(
+          builder: (context) => NewPage(
+              nodeId: originalCowId, appLocalizations: appLocalizations)),
     );
   }
 }

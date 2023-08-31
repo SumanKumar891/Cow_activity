@@ -1,3 +1,8 @@
+/*
+
+    Sarthak @2023
+
+ */
 
 /*
 import 'package:flutter/material.dart';
@@ -208,33 +213,16 @@ class _TableWidgetState extends State<TableWidget> {
 }
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dataTablePage.dart';
+import 'main.dart';
 
 class NewPage extends StatelessWidget {
+  final AppLocalizations appLocalizations;
   final String nodeId;
-  NewPage({required this.nodeId});
+  NewPage({required this.nodeId, required this.appLocalizations});
 
   @override
   Widget build(BuildContext context) {
@@ -265,7 +253,7 @@ class NewPage extends StatelessWidget {
         ),
       ),
       */
-        /*
+      /*
       body: Center(
         child: Card( // Wrap the Column with a Card widget
           elevation: 8, // Add a shadow effect
@@ -291,8 +279,10 @@ class NewPage extends StatelessWidget {
           height: 400, // Set the height of the container
           child: Card(
             elevation: 8,
-            shape: RoundedRectangleBorder( // Add rounded corners to the Card
-              borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
+            shape: RoundedRectangleBorder(
+              // Add rounded corners to the Card
+              borderRadius:
+                  BorderRadius.circular(20), // Adjust the radius as needed
             ),
             margin: EdgeInsets.all(20),
             child: Column(
@@ -302,7 +292,8 @@ class NewPage extends StatelessWidget {
                 SizedBox(height: 30),
                 Padding(
                   padding: EdgeInsets.all(30),
-                  child: TableWidget(nodeId: nodeId),
+                  child: TableWidget(
+                      nodeId: nodeId, appLocalizations: appLocalizations),
                 ),
               ],
             ),
@@ -315,7 +306,8 @@ class NewPage extends StatelessWidget {
 
 class TableWidget extends StatefulWidget {
   final String nodeId;
-  TableWidget({required this.nodeId});
+  final AppLocalizations appLocalizations;
+  TableWidget({required this.nodeId, required this.appLocalizations});
   @override
   _TableWidgetState createState() => _TableWidgetState();
 }
@@ -325,9 +317,9 @@ class _TableWidgetState extends State<TableWidget> {
   TextEditingController _dateTimeController2 = TextEditingController();
 
   int?
-  epochTime1; // Variable to save the EPOCH time for the first selected date and time
+      epochTime1; // Variable to save the EPOCH time for the first selected date and time
   int?
-  epochTime2; // Variable to save the EPOCH time for the second selected date and time
+      epochTime2; // Variable to save the EPOCH time for the second selected date and time
 
   @override
   void initState() {
@@ -347,7 +339,7 @@ class _TableWidgetState extends State<TableWidget> {
   void _updateDateTime1() {
     if (_dateTimeController1.text.isNotEmpty) {
       final DateTime selectedDateTime1 =
-      DateTime.parse(_dateTimeController1.text);
+          DateTime.parse(_dateTimeController1.text);
       setState(() {
         epochTime1 = selectedDateTime1.millisecondsSinceEpoch ~/ 1000;
         print('Selected Date and Time 1 (EPOCH time): $epochTime1');
@@ -363,7 +355,7 @@ class _TableWidgetState extends State<TableWidget> {
   void _updateDateTime2() {
     if (_dateTimeController2.text.isNotEmpty) {
       final DateTime selectedDateTime2 =
-      DateTime.parse(_dateTimeController2.text);
+          DateTime.parse(_dateTimeController2.text);
       setState(() {
         epochTime2 = selectedDateTime2.millisecondsSinceEpoch ~/ 1000;
         print('Selected Date and Time 2 (EPOCH time): $epochTime2');
@@ -376,7 +368,8 @@ class _TableWidgetState extends State<TableWidget> {
     }
   }
 
-  Future<void> _callApiAndNavigate(BuildContext context) async {
+  Future<void> _callApiAndNavigate(
+      BuildContext context, AppLocalizations appLocalizations) async {
     if (epochTime1 != null && epochTime2 != null) {
       try {
         final response = await apiCallFunction(epochTime1!, epochTime2!);
@@ -385,7 +378,8 @@ class _TableWidgetState extends State<TableWidget> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DataTablePage(response: response),
+            builder: (context) => DataTablePage(
+                response: response, appLocalizations: appLocalizations),
           ),
         );
       } catch (error) {
@@ -433,7 +427,8 @@ class _TableWidgetState extends State<TableWidget> {
           onTap: () => _selectDateTime(context, _dateTimeController1),
           readOnly: true,
           decoration: InputDecoration(
-            labelText: 'Select start date & time ',
+            labelText:
+                widget.appLocalizations.localizedValues['select_start_epoch'],
             //suffixIcon: Icon(Icons.calendar_today),
           ),
         ),
@@ -443,14 +438,17 @@ class _TableWidgetState extends State<TableWidget> {
           onTap: () => _selectDateTime(context, _dateTimeController2),
           readOnly: true,
           decoration: InputDecoration(
-            labelText: 'Select end date & time',
+            labelText:
+                widget.appLocalizations.localizedValues['select_end_epoch'],
             //suffixIcon: Icon(Icons.calendar_today),
           ),
         ),
         SizedBox(height: 20),
         ElevatedButton(
-          onPressed: () => _callApiAndNavigate(context),
-          child: Text('Submit'), // Changed the button text to "Submit"
+          onPressed: () =>
+              _callApiAndNavigate(context, widget.appLocalizations),
+          child: Text(widget.appLocalizations.localizedValues[
+              'submit']), // Changed the button text to "Submit"
         ),
       ],
     );
