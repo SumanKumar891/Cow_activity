@@ -1,59 +1,92 @@
-# Developed by SarthakJain (Awadh, IIT Ropar)
+![App Screenshot](assets/images/awadh_banner.jpeg?text=App+Screenshot+Here)
 
 
-# COPYRIGHT RESTRICTED ~SARTHAK JAIN (shubh2002jain@gmail.com)
+![App Screenshot](assets/images/mooofarm_banner.jpeg?text=App+Screenshot+Here)
 
 
-#Official Mooofarm App for COW HEALTH MONITORING SYSTEM
 
 
-# The App is currently available in three Languages: English, Punjabi & Hindi 
+# COW HEALTH MONITORING SYSTEM
 
- Also, the very admirable DARK MODE feature is added 
+A REAL TIME Cow Health Monitoring Platform/System, to track cow's activities between any two entered time intervals. 
 
- Security featues:
- freeRASP(Run Time Analysis Software Protection): 
-           ->Code Tampering 
-           ->Reverse Engineering
+This Projects is Sponsered by MOOOFARM
 
- Attacks:  Hook, Root, Debugger, Emulator, Fingerprint
+Developed and Maintained by AWADH, IIT ROPAR India
 
+Developer ~ Sarthak Jain (shubh2002jain@gmail.com)
 
-#If you want to run this project on your local, follow these step by step instructions.
+Github ~ https://github.com/SarthakJaindebugger
 
 
-Common instructions:
 
-Install Android Studio:
+## Detailed Installation Instructions
+
+*Note: All the below steps were tried and tested for the below mentioned H/W & S/W :
+
+MacOs:
+
+MacOs Monterey 12.6.8
+
+intel i5, dual core 1800MHz
+
+8GB RAM
+
+intel HD graphics 6000 1563
+
+Ubuntu:
+
+Ubuntu 22.04.3 LTS
+
+8GB RAM
+
+intel i7 
+
+NVIDIA 4GB dedicated GPU(graphic card)
+
+Windows:
+
+Windows 11
+
+8Gb RAM
+
+intel i7
+
+NVIDIA 4GB dedicated GPU(graphic card)
+
+
+1)Common instructions for all OS:
+
+->Install Android Studio:
 https://developer.android.com/codelabs/basic-android-kotlin-compose-install-android-studio#4
 
 
-Install a flutter version bases on your OS:
+->Install a flutter version bases on your OS:
 **Before that create a src folder (windows C drive or drive where windows is installed) or a Developer folder(MacOs/Linux home directory)
 
 https://docs.flutter.dev/get-started/install
 
-Install a Git version based on OS:
+->Install a Git version based on OS:
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-Install VSCode :
+->Install VSCode :
 https://code.visualstudio.com/download
 
-Install Dart SDK:
+->Install Dart SDK:
 https://dart.dev/get-dart#install
 
 
-System specific instructions:
+=>System specific instructions:
 
-Unix based systems(MacOS/Linux) :
+1)Unix based systems(MacOS/Linux) :
 
-Only for MacOs
+a)Only for MacOs
 
-Install a XCode version based on your system hardware compatibility:
+->Install a XCode version based on your system hardware compatibility:
 https://xcodereleases.com/
 
 
-Install homebrew/macports:
+->Install homebrew/macports:
 homebrew: https://brew.sh/
 macports: https://guide.macports.org/#installing.macports.source
 
@@ -68,11 +101,11 @@ https://youtu.be/hL7pkX1Pfko?feature=shared
 
 
 
-Windows:
+2)Windows:
 
-MUST INSTALL THE FOLLOWING:
+**MUST INSTALL THE FOLLOWING:
 
-Install Using Powershell
+->Install Using Powershell
 
 When installing the software via PowerShell, we must ensure the local Get-ExecutionPolicy is not set to restricted. Chocolately suggests using Bypass to bypass the policy to get things installed or AllSigned for increased security.
 
@@ -90,7 +123,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 If there are no errors, Chocolatey will be installed. We can verify the installation using the choco or choco -? command.
 
-Install Using Windows Cmd Shell
+->Install Using Windows Cmd Shell
 
 First, we need ensure that we are using an administrative shell.
 Next, copy the following command to the cmd.exe shell.
@@ -106,7 +139,7 @@ Microsoft Windows [Version 10.0.18363.900] (c) 2019 Microsoft Corporation. All r
 
 
 
-To set Flutter SDK path follow this video link, skip to 5:33 :
+->To set Flutter SDK path follow this video link, skip to 5:33 :
 https://youtu.be/BqHOtlh3Dd4?feature=shared
 
 
@@ -115,7 +148,7 @@ https://youtu.be/BqHOtlh3Dd4?feature=shared
 
 
 
-Now run this command if the installation was successful:
+->Now run this command if the installation was successful:
 
 flutter --version
 flutter doctor
@@ -128,3 +161,31 @@ If both the commands run successfully n give no errors, then follow the next bel
 flutter doctor --android-licenses
 
 Keep pressing 'y' wherever asked by terminal
+
+For any other isseus please check all the dependencies in pubspec.yaml file, present in root directory.
+
+
+
+
+    
+## HOW TO RUN THE PROJECT AFTER SUCCESSFUL INSTALLATION OF ALL OF THE ABOVE:
+
+I presume the following:
+
+->You are using Androis Studio IDE for all types of editing, running and debugging.
+
+->Dart SDK version is selected 
+
+->Flutter bin path is managed properly 
+
+*In SDK Mangager select the option for Enable Dart Support/Version for this project IF DISABLED
+
+
+*recommended and tested Android Stidio version: Flamingo 2022.2.1
+
+With reference to the below screenshot attached, Select Chrome Web from top navigation bar, as setting up a virtual device may be hetic for beginers and may not support some h/w requirements. Also, selcted main.dart configuration and hit the green run button to run the project.
+
+
+
+![App Screenshot](assets/images/ASIDE.gif?text=App+Screenshot+Here)
+
