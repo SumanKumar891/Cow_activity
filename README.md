@@ -4,22 +4,22 @@
 # COPYRIGHT RESTRICTED ~SARTHAK JAIN (shubh2002jain@gmail.com)
 
 
-Official Mooofarm App for COW HEALTH MONITORING SYSTEM
+#Official Mooofarm App for COW HEALTH MONITORING SYSTEM
 
 
 # The App is currently available in three Languages: English, Punjabi & Hindi 
 
- Also, th every admirable DARK MODE feature is added 
+ Also, the very admirable DARK MODE feature is added 
 
  Security featues:
-# freeRASP(Run Time Analysis Software Protection): 
-#           ->Code Tampering 
-#           ->Reverse Engineering
+ freeRASP(Run Time Analysis Software Protection): 
+           ->Code Tampering 
+           ->Reverse Engineering
 
-# Attacks:  Hook, Root, Debugger, Emulator, Fingerprint
+ Attacks:  Hook, Root, Debugger, Emulator, Fingerprint
 
 
-If you want to run this project on your local, follow these step by step instructions.
+#If you want to run this project on your local, follow these step by step instructions.
 
 
 Common instructions:
