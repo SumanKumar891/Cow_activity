@@ -1,5 +1,5 @@
 
-![MasterHead]([https://media.licdn.com/dms/image/D4D05AQGFRp-k-Y3SLw/videocover-low/0/1687508505997?e=2147483647&v=beta&t=jkiYwpwBbd60WjE8sSpf4oLMdI1nMOTTaatTD0K6kjQ](https://entrackr.com/storage/2022/01/mooofarm.jpg))
+![MasterHead]([https://d2ks0dcefabjsg.cloudfront.net/wp-content/uploads/2023/08/AWaDH-Logo-1-1.png](https://entrackr.com/storage/2022/01/mooofarm.jpg))
 
 
 ![AWADH](https://entrackr.com/storage/2022/01/mooofarm.jpg)
