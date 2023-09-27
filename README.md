@@ -1,5 +1,5 @@
 
-![AWADH](/assets/images/awadh_banner.jpeg)
+![AWADH](https://entrackr.com/storage/2022/01/mooofarm.jpg)
 
 ![MOOFARM](/assets/images/mooofarm_banner.jpeg?)
 
