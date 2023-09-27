@@ -65,6 +65,9 @@ class AppLocalizationsPa extends AppLocalizations {
   String get end_timestamp => 'ਸਮਾਪਤੀ ਸਮਾਂ';
 
   @override
+  String get time => 'ਸਮਾਂ';
+
+  @override
   String get activity => 'ਸਰਗਰਮੀ';
 
   @override

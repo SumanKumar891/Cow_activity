@@ -734,21 +734,23 @@ class CustomFloatingWindow extends StatelessWidget {
         children: [
           Image.network(imagePath),
           ListTile(
-            title: Text('$cowIdText : $nodeId',
-              style: GoogleFonts.kalam (
+            title: Text(
+              '$cowIdText : $nodeId',
+              style: GoogleFonts.kalam(
                   textStyle: TextStyle(
-                    fontSize: 14.0,
-                    //color: Colors.green,
-                  )),
+                fontSize: 14.0,
+                //color: Colors.green,
+              )),
             ),
             trailing: ElevatedButton(
               onPressed: onButtonPressed,
-              child: Text(buttonText,
-                style: GoogleFonts.kalam (
+              child: Text(
+                buttonText,
+                style: GoogleFonts.kalam(
                     textStyle: TextStyle(
-                      fontSize: 14.0,
-                      //color: Colors.green,
-                    )),
+                  fontSize: 14.0,
+                  //color: Colors.green,
+                )),
               ),
             ),
           ),
@@ -834,12 +836,14 @@ class _ThirdPageState extends State<ThirdPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.appLocalizations.localizedValues['my_cows'],
-          style: GoogleFonts.kalam (
-              textStyle: TextStyle(
-                fontSize: 20.0,
-                //color: Colors.green,
-              ),),
+        title: Text(
+          widget.appLocalizations.localizedValues['my_cows'],
+          style: GoogleFonts.kalam(
+            textStyle: TextStyle(
+              fontSize: 20.0,
+              //color: Colors.green,
+            ),
+          ),
         ),
       ),
       body: ListView(
@@ -857,12 +861,12 @@ class _ThirdPageState extends State<ThirdPage> {
               onPressed: previousPage,
             ),
             Text(
-                '${widget.appLocalizations.localizedValues['page']} ${currentPage + 1}',
-              style: GoogleFonts.kalam (
+              '${widget.appLocalizations.localizedValues['page']} ${currentPage + 1}',
+              style: GoogleFonts.kalam(
                   textStyle: TextStyle(
-                    fontSize: 14.0,
-                    //color: Colors.green,
-                  )),
+                fontSize: 14.0,
+                //color: Colors.green,
+              )),
             ),
             IconButton(
               icon: Icon(Icons.arrow_forward),
@@ -945,9 +949,7 @@ class _ThirdPageState extends State<ThirdPage> {
         children: [
           CustomFloatingWindow(
               nodeId: displayedCowId.toString(),
-              imagePath:
-             'assets/images/tarantarancow1.jpeg',
-
+              imagePath: 'assets/images/tarantarancow1.jpeg',
               buttonText: widget.appLocalizations.localizedValues['click_here'],
               onButtonPressed: () {
                 print('Clicked on Displayed Cow ID: $displayedCowId');

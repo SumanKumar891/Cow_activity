@@ -65,6 +65,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get end_timestamp => 'End Time';
 
   @override
+  String get time => 'Time';
+
+  @override
   String get activity => 'Activity';
 
   @override

@@ -11,7 +11,6 @@ import 'NodeList.dart';
 import 'main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 //this is the second page
 
 class SeparatePage extends StatefulWidget {
@@ -21,14 +20,11 @@ class SeparatePage extends StatefulWidget {
   _SeparatePageState createState() => _SeparatePageState(appLocalizations);
 }
 
-
 //login and register page context(page 2)
 class _SeparatePageState extends State<SeparatePage>
     with SingleTickerProviderStateMixin {
   late AnimationController _dialogAnimationController;
   late Animation<double> _fadeAnimation;
-
-
 
   final AppLocalizations appLocalizations;
   _SeparatePageState(this.appLocalizations);
@@ -93,7 +89,6 @@ class _SeparatePageState extends State<SeparatePage>
   }
 }
 
-
 //popped up animation or floating window for second page
 class AnimatedLoginDialog extends StatefulWidget {
   final AppLocalizations appLocalizations;
@@ -101,8 +96,6 @@ class AnimatedLoginDialog extends StatefulWidget {
   @override
   _AnimatedLoginDialogState createState() => _AnimatedLoginDialogState();
 }
-
-
 
 /*
 
@@ -414,8 +407,10 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
             children: [
               Text(
                 widget.appLocalizations.localizedValues['login_page_welcome'],
-                style: GoogleFonts.kalam (
-                textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                style: GoogleFonts.kalam(
+                  textStyle:
+                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
               ),
               SizedBox(height: 20),
               Image.asset(
@@ -440,12 +435,11 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
                   ),
                 ),
                 decoration: InputDecoration(
-                  labelText: widget.appLocalizations.localizedValues['enter_Farmer_ID'],
+                  labelText: widget
+                      .appLocalizations.localizedValues['enter_Farmer_ID'],
                 ),
               ),
               SizedBox(height: 20),
-
-
 
               // TextFormField(
               //   controller: _passwordController,
@@ -477,7 +471,8 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
                   ),
                 ),
                 decoration: InputDecoration(
-                  labelText: widget.appLocalizations.localizedValues['enter_password'],
+                  labelText:
+                      widget.appLocalizations.localizedValues['enter_password'],
                   suffixIcon: IconButton(
                     icon: Icon(
                       _isPasswordVisible
@@ -496,8 +491,6 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
 
               SizedBox(height: 20),
 
-
-
               ElevatedButton(
                 onPressed: () =>
                     _callLoginApi(context, widget.appLocalizations),
@@ -507,19 +500,15 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
                       borderRadius: BorderRadius.circular(70)),
                 ),
                 child: Text(
-                    widget.appLocalizations.localizedValues['login'],
-                  style: GoogleFonts.kalam (
+                  widget.appLocalizations.localizedValues['login'],
+                  style: GoogleFonts.kalam(
                       textStyle: TextStyle(
-                        fontSize: 16.0,
-                        color: Colors.white,
-                      )
-                  ),
-
+                    fontSize: 16.0,
+                    color: Colors.white,
+                  )),
                 ),
               ),
               SizedBox(height: 50),
-
-
 
               ElevatedButton(
                 onPressed: () =>
@@ -529,15 +518,13 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(70)),
                 ),
-                child:
-                Text(widget.appLocalizations.localizedValues['register'],
-
-                  style: GoogleFonts.kalam (
+                child: Text(
+                  widget.appLocalizations.localizedValues['register'],
+                  style: GoogleFonts.kalam(
                       textStyle: TextStyle(
-                        fontSize: 16.0,
-                        color: Colors.white,
-                      )
-                  ),
+                    fontSize: 16.0,
+                    color: Colors.white,
+                  )),
                 ),
               ),
               SizedBox(height: 10),
@@ -546,13 +533,10 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
                     _openForgetPasswordPage(context, widget.appLocalizations),
                 child: Text(
                   widget.appLocalizations.localizedValues['forget_passwd'],
-
-                  style: GoogleFonts.kalam (
-                      textStyle: TextStyle(
-                        fontSize: 16.0
-                        //color: Colors.white,
-                      )
-                  ),
+                  style: GoogleFonts.kalam(
+                      textStyle: TextStyle(fontSize: 16.0
+                          //color: Colors.white,
+                          )),
                 ),
               ),
             ],
@@ -562,8 +546,6 @@ class _AnimatedLoginDialogState extends State<AnimatedLoginDialog>
     );
   }
 }
-
-
 
 //forget password page, opens on clicking the highlighted forget password text link
 class ForgetPasswordPage extends StatelessWidget {
@@ -590,20 +572,17 @@ class ForgetPasswordPage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-            'Site under maintenance ~sarthak@2023',
-          style: GoogleFonts.kalam (
+          'Site under maintenance ~sarthak@2023',
+          style: GoogleFonts.kalam(
               textStyle: TextStyle(
-                fontSize: 20.0,
-               // color: Colors.white,
-              )
-          ),
+            fontSize: 20.0,
+            // color: Colors.white,
+          )),
         ),
-
       ),
     );
   }
 }
-
 
 //new farmer ID registeration
 class RegisterPage extends StatefulWidget {
@@ -653,14 +632,14 @@ class _RegisterPageState extends State<RegisterPage> {
     if (password != reenterPassword) {
       // Show an error message if passwords don't match
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(
-            'Passwords do not match!',
-          style: GoogleFonts.kalam (
+        SnackBar(
+            content: Text(
+          'Passwords do not match!',
+          style: GoogleFonts.kalam(
               textStyle: TextStyle(
-                fontSize: 16.0,
-                //color: Colors.white,
-              )
-          ),
+            fontSize: 16.0,
+            //color: Colors.white,
+          )),
         )),
       );
       return;
@@ -683,13 +662,14 @@ class _RegisterPageState extends State<RegisterPage> {
       } else {
         // Show an error message if the API call fails
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Failed to register. Please try again!',
-            style: GoogleFonts.kalam (
+          SnackBar(
+              content: Text(
+            'Failed to register. Please try again!',
+            style: GoogleFonts.kalam(
                 textStyle: TextStyle(
-                  fontSize: 16.0,
-                  //color: Colors.white,
-                )
-            ),
+              fontSize: 16.0,
+              //color: Colors.white,
+            )),
           )),
         );
       }
@@ -697,13 +677,14 @@ class _RegisterPageState extends State<RegisterPage> {
       // Show an error message if an error occurs during the API call
       print(error);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('An error occurred. Please try again later!',
-          style: GoogleFonts.kalam (
+        SnackBar(
+            content: Text(
+          'An error occurred. Please try again later!',
+          style: GoogleFonts.kalam(
               textStyle: TextStyle(
-                fontSize: 16.0,
-                //color: Colors.white,
-              )
-          ),
+            fontSize: 16.0,
+            //color: Colors.white,
+          )),
         )),
       );
     }
@@ -717,8 +698,6 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-
-
             // TextFormField(
             //   controller: _nameController,
             //   decoration: InputDecoration(
@@ -742,7 +721,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               decoration: InputDecoration(
-                labelText: widget.appLocalizations.localizedValues['enter_name'],
+                labelText:
+                    widget.appLocalizations.localizedValues['enter_name'],
               ),
               onChanged: (value) {
                 setState(() {
@@ -751,8 +731,6 @@ class _RegisterPageState extends State<RegisterPage> {
               },
             ),
             SizedBox(height: 20),
-
-
 
             TextFormField(
               controller: _emailController,
@@ -774,8 +752,6 @@ class _RegisterPageState extends State<RegisterPage> {
               },
             ),
             SizedBox(height: 20),
-
-
 
             TextFormField(
               controller: _passwordController,
@@ -799,8 +775,6 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             SizedBox(height: 20),
 
-
-
             TextFormField(
               controller: _reenterPasswordController,
               style: GoogleFonts.kalam(
@@ -823,7 +797,6 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             SizedBox(height: 20),
 
-
             ElevatedButton(
               onPressed: () => _callApiAndRegister(context),
               style: ElevatedButton.styleFrom(
@@ -831,7 +804,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(70)),
               ),
-              child: Text(widget.appLocalizations.localizedValues['register'],
+              child: Text(
+                widget.appLocalizations.localizedValues['register'],
                 style: GoogleFonts.kalam(
                   textStyle: TextStyle(
                     fontSize: 16.0,
