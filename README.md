@@ -1,10 +1,10 @@
 
-![MasterHead](https://entrackr.com/storage/2022/01/mooofarm.jpg)
+![MasterHead](https://businessconnectindia.in/wp-content/uploads/2023/08/IIT-Ropar.jpg)
 
 
 ![AWADH](https://entrackr.com/storage/2022/01/mooofarm.jpg)
 
-![MOOFARM](/assets/images/mooofarm_banner.jpeg?)
+
 
 
 
