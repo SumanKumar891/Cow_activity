@@ -1,7 +1,7 @@
-![App Screenshot](assets/images/awadh_banner.jpeg?text=App+Screenshot+Here)
 
+![AWADH](assets/images/awadh_banner.jpeg)
+![MOOFARM](assets/images/mooofarm_banner.jpeg?)
 
-![App Screenshot](assets/images/mooofarm_banner.jpeg?text=App+Screenshot+Here)
 
 
 
@@ -186,6 +186,4 @@ I presume the following:
 With reference to the below screenshot attached, Select Chrome Web from top navigation bar, as setting up a virtual device may be hetic for beginers and may not support some h/w requirements. Also, selcted main.dart configuration and hit the green run button to run the project.
 
 
-
-![App Screenshot](assets/images/ASIDE.gif?text=App+Screenshot+Here)
-
+![Android Studio](assets/images/ASIDE.gif)
