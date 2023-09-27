@@ -188,4 +188,4 @@ I presume the following:
 With reference to the below screenshot attached, Select Chrome Web from top navigation bar, as setting up a virtual device may be hetic for beginers and may not support some h/w requirements. Also, selcted main.dart configuration and hit the green run button to run the project.
 
 
-![Android Studio](/assets/images/ASIDE.gif)
+![Android Studio](https://media.geeksforgeeks.org/wp-content/uploads/20211018094329/6a.jpg)
