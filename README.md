@@ -1,5 +1,5 @@
 
-![MasterHead]([https://d2ks0dcefabjsg.cloudfront.net/wp-content/uploads/2023/08/AWaDH-Logo-1-1.png](https://entrackr.com/storage/2022/01/mooofarm.jpg))
+![MasterHead](https://entrackr.com/storage/2022/01/mooofarm.jpg)
 
 
 ![AWADH](https://entrackr.com/storage/2022/01/mooofarm.jpg)
