@@ -19,7 +19,7 @@
   "cow_activity_data": "Cow Activity Data",
   "start_timestamp": "Start Time",
   "end_timestamp": "End Time",
-  "time": "Time",
+  "time": "total time",
   "activity": "Activity",
   "fetched_data": "Fetched Data",
   "my_cows": "MY ALL COWS",
