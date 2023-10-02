@@ -6,7 +6,76 @@
   <component name="ChangeListManager">
     <list default="true" id="a5a86a6d-ae70-49c7-8901-ad0e8140490d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/AssetManifest.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/AssetManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/FontManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/NOTICES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/hi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/Screenshot%202023-07-17%20at%203.58.22%20PM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/acc.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/awadh_fam.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/awadh_logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/awadh_logo2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/awadh_logo_only.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/awadhlogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/background.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/cow_banner1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/gateway_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/gps.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/iitropar_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/img1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/imgr1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/logo1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/logo2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/mission.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/mooofarmlogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/science_tech_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/sct_logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/tarantarancow.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/tarantarancow1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/pa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/Screenshot%202023-07-17%20at%203.58.22%20PM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/packages/easy_localization/i18n/ar-DZ.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/packages/easy_localization/i18n/ar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/packages/easy_localization/i18n/en-US.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/packages/easy_localization/i18n/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/shaders/ink_sparkle.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/a05e2a8f25836254c1198f936fbda38e.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/a05e2a8f25836254c1198f936fbda38e.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/d08ba69df5bbf77e6f7d2a3a5ec58923/_composite.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/d08ba69df5bbf77e6f7d2a3a5ec58923/gen_dart_plugin_registrant.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/d08ba69df5bbf77e6f7d2a3a5ec58923/gen_l10n_inputs_and_outputs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/d08ba69df5bbf77e6f7d2a3a5ec58923/gen_localizations.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/d08ba69df5bbf77e6f7d2a3a5ec58923/gen_localizations.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/Screenshot%25202023-07-17%2520at%25203.58.22%2520PM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/assets/assets/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/hi.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/assets/assets/hi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/pa.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/assets/assets/pa.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/flutter_service_worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/main.dart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/canvaskit/canvaskit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/canvaskit/canvaskit.wasm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/canvaskit/chromium/canvaskit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/canvaskit/chromium/canvaskit.wasm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/canvaskit/skwasm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/canvaskit/skwasm.wasm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/canvaskit/skwasm.worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_service_worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/Icon-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/Icon-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/Icon-maskable-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/Icon-maskable-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/NodeList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/NodeList.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.dart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

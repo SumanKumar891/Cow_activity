@@ -10,7 +10,7 @@
 
 # COW HEALTH MONITORING SYSTEM
 
-A REAL TIME Cow Health Monitoring Platform/System, to track cow's activities between any two entered time intervals. 
+A REAL TIME Cow Health Monitoring Platform/System, to track cow's activities between any two entered time intervals.
 
 This Projects is Sponsered by MOOOFARM
 
@@ -42,7 +42,7 @@ Ubuntu 22.04.3 LTS
 
 8GB RAM
 
-intel i7 
+intel i7
 
 NVIDIA 4GB dedicated GPU(graphic card)
 
@@ -169,16 +169,16 @@ For any other isseus please check all the dependencies in pubspec.yaml file, pre
 
 
 
-    
+
 ## HOW TO RUN THE PROJECT AFTER SUCCESSFUL INSTALLATION OF ALL OF THE ABOVE:
 
 I presume the following:
 
 ->You are using Androis Studio IDE for all types of editing, running and debugging.
 
-->Dart SDK version is selected 
+->Dart SDK version is selected
 
-->Flutter bin path is managed properly 
+->Flutter bin path is managed properly
 
 *In SDK Mangager select the option for Enable Dart Support/Version for this project IF DISABLED
 
