@@ -726,7 +726,11 @@ import 'package:google_fonts/google_fonts.dart';
 class NewPage extends StatelessWidget {
   final AppLocalizations appLocalizations;
   final String nodeId;
-  NewPage({required this.nodeId, required this.appLocalizations});
+  final String email;
+  NewPage(
+      {required this.nodeId,
+      required this.appLocalizations,
+      required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -797,7 +801,9 @@ class NewPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(30),
                   child: TableWidget(
-                      nodeId: nodeId, appLocalizations: appLocalizations),
+                      nodeId: nodeId,
+                      appLocalizations: appLocalizations,
+                      email: email),
                 ),
               ],
             ),
@@ -811,7 +817,11 @@ class NewPage extends StatelessWidget {
 class TableWidget extends StatefulWidget {
   final String nodeId;
   final AppLocalizations appLocalizations;
-  TableWidget({required this.nodeId, required this.appLocalizations});
+  final String email;
+  TableWidget(
+      {required this.nodeId,
+      required this.appLocalizations,
+      required this.email});
   @override
   _TableWidgetState createState() => _TableWidgetState();
 }
@@ -912,7 +922,7 @@ class _TableWidgetState extends State<TableWidget> {
     final response = await http.get(
       Uri.https(
         'iwkdqlzs8c.execute-api.us-east-1.amazonaws.com',
-        '/gateway_prediction',
+        '/${widget.email}',
         {
           'startTime': epochTime1.toString(), // Convert to String
           'endTime': epochTime2.toString(), // Convert to String

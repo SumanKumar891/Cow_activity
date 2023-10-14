@@ -815,19 +815,19 @@ class _ThirdPageState extends State<ThirdPage> {
     }
   }
 
-  void updateDisplayedCowIds() {
-    displayedCowIds.clear();
-    final currentPageNodeIds = getCurrentPageNodeIds();
+  // void updateDisplayedCowIds() {
+  //   displayedCowIds.clear();
+  //   final currentPageNodeIds = getCurrentPageNodeIds();
 
-    for (var i = 0; i < currentPageNodeIds.length; i++) {
-      final displayedCowId = i + (currentPage * 10) + 1;
-      displayedCowIds.add(displayedCowId);
-    }
-  }
+  //   for (var i = 0; i < currentPageNodeIds.length; i++) {
+  //     final displayedCowId = i + (currentPage * 10) + 1;
+  //     displayedCowIds.add(displayedCowId);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
-    updateDisplayedCowIds();
+    // updateDisplayedCowIds();
     double screenWidth = MediaQuery.of(context).size.width;
     double windowWidth = screenWidth * 0.4;
     double paddingRatio = 0.1;
@@ -882,15 +882,14 @@ class _ThirdPageState extends State<ThirdPage> {
     int windowsPerRow = 2;
     List<Widget> rows = [];
 
-    for (int i = 0; i < displayedCowIds.length; i += windowsPerRow) {
+    for (int i = 0; i < getCurrentPageNodeIds().length; i += windowsPerRow) {
       List<Widget> rowChildren = [];
 
       for (int j = 0; j < windowsPerRow; j++) {
         int index = i + j;
 
-        if (index < displayedCowIds.length) {
-          final displayedCowId = displayedCowIds[index];
-          final originalCowId = (displayedCowId - 1) + 101;
+        if (index < getCurrentPageNodeIds().length) {
+          final nodeId = getCurrentPageNodeIds()[index];
 
           double cardWidth = windowWidth / windowsPerRow;
 
@@ -899,8 +898,7 @@ class _ThirdPageState extends State<ThirdPage> {
               width: cardWidth,
               padding: EdgeInsets.all(8.0),
               child: buildCustomFloatingWindow(
-                displayedCowId: displayedCowId,
-                originalCowId: originalCowId,
+                nodeId: nodeId,
                 context: context,
               ),
             ),
@@ -920,15 +918,12 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 
   List<Widget> _buildWindowsInSingleColumn(double windowWidth) {
-    return displayedCowIds.map((displayedCowId) {
-      final originalCowId = (displayedCowId - 1) + 101;
-
+    return getCurrentPageNodeIds().map((nodeId) {
       return Container(
         width: windowWidth,
         padding: EdgeInsets.all(8.0),
         child: buildCustomFloatingWindow(
-          displayedCowId: displayedCowId,
-          originalCowId: originalCowId,
+          nodeId: nodeId,
           context: context,
         ),
       );
@@ -936,8 +931,7 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 
   Widget buildCustomFloatingWindow({
-    required int displayedCowId,
-    required int originalCowId,
+    required int nodeId,
     required BuildContext context,
   }) {
     return Card(
@@ -948,14 +942,12 @@ class _ThirdPageState extends State<ThirdPage> {
       child: Column(
         children: [
           CustomFloatingWindow(
-              nodeId: displayedCowId.toString(),
+              nodeId: nodeId.toString(),
               imagePath: 'assets/images/tarantarancow1.jpeg',
               buttonText: widget.appLocalizations.localizedValues['click_here'],
               onButtonPressed: () {
-                print('Clicked on Displayed Cow ID: $displayedCowId');
-                print('Original Cow ID: $originalCowId');
-                navigateToNewPage(
-                    context, originalCowId.toString(), widget.appLocalizations);
+                navigateToNewPage(context, nodeId.toString(),
+                    widget.appLocalizations, widget.email);
               },
               cowIdText: widget.appLocalizations.localizedValues['cow_id']),
         ],
@@ -964,12 +956,14 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 
   void navigateToNewPage(BuildContext context, String originalCowId,
-      AppLocalizations appLocalizations) {
+      AppLocalizations appLocalizations, String email) {
     Navigator.push(
       context,
       MaterialPageRoute(
           builder: (context) => NewPage(
-              nodeId: originalCowId, appLocalizations: appLocalizations)),
+              nodeId: originalCowId,
+              appLocalizations: appLocalizations,
+              email: email)),
     );
   }
 }

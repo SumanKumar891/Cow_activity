@@ -3227,8 +3227,7 @@ class DataTablePage extends StatelessWidget {
     // List<List<activityData>> groupedActivities = [];
     // // ... (your grouping logic remains unchanged) ...
 
-    int nodeIdValue = int.tryParse(nodeId) ?? 0;
-    int cowNumber = nodeIdValue - 100;
+    String nodeIdValue = nodeId;
 
     List<List<activityData>> groupedActivities = [];
     List<activityData> currentGroup = [];
@@ -3258,7 +3257,11 @@ class DataTablePage extends StatelessWidget {
         List<Map<String, dynamic>>.from(response);
 
     Map<String, int> totalActivityTimes = {};
-
+    if (activityTimeList.length == 1) {
+      totalActivityTimes.update(
+          activityTimeList[0]['ActivityLabel'], (value) => 1,
+          ifAbsent: () => 1);
+    }
     for (int i = 0; i < activityTimeList.length - 1; i++) {
       if (activityTimeList[i]['ActivityLabel'] ==
           activityTimeList[i + 1]['ActivityLabel']) {
@@ -3272,10 +3275,10 @@ class DataTablePage extends StatelessWidget {
         int startTime = int.parse(activityTimeList[i]['TimeStamp']);
         int endTime = int.parse(activityTimeList[i]['TimeStamp']);
         int duration = endTime - startTime;
-        if (activityTimeList[i]['ActivityLabel'] !=
-                activityTimeList[i + 1]['ActivityLabel'] &&
-            activityTimeList[i]['ActivityLabel'] !=
-                activityTimeList[i - 1]['ActivityLabel']) {
+        if (i == 0) {
+          duration = duration + 1;
+        } else if (activityTimeList[i]['ActivityLabel'] !=
+            activityTimeList[i - 1]['ActivityLabel']) {
           duration = duration + 1;
         }
         totalActivityTimes.update(
@@ -3314,7 +3317,7 @@ class DataTablePage extends StatelessWidget {
               appLocalizations.localizedValues['cow_activity_data'] +
                   ' ( ' +
                   appLocalizations.localizedValues['cow_id'] +
-                  ' : $cowNumber )',
+                  ' : $nodeIdValue )',
               style: GoogleFonts.kalam(
                   textStyle: TextStyle(
                 fontSize: 20.0,
