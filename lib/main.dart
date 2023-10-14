@@ -1340,7 +1340,19 @@ class _LoginPageState extends State<LoginPage>
                   ),
                 ),
               ),
-
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    'copyright restricted sarthakjain@2023 awadh',
+                    style: TextStyle(
+                      fontSize: 8,
+                      color: Colors.black26,
+                    ),
+                  ),
+                ),
+              ),
 
               // Align(
               //   alignment: Alignment.bottomLeft,

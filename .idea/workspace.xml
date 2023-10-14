@@ -4,7 +4,48 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5a86a6d-ae70-49c7-8901-ad0e8140490d" name="Changes" comment="" />
+    <list default="true" id="a5a86a6d-ae70-49c7-8901-ad0e8140490d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/service_worker.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/service_worker.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/web_release_bundle.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/web_release_bundle.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/web_service_worker.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/a4309e075ad9573e547aa885e2c5b342/web_service_worker.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/ASIDE.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/awadh_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets/images/mooofarm_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/ASIDE.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/awadh_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/mooofarm_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/a05e2a8f25836254c1198f936fbda38e.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/a05e2a8f25836254c1198f936fbda38e.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/assets/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/hi.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/assets/hi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/ASIDE.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/awadh_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/images/mooofarm_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/assets/pa.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/assets/pa.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/images/ASIDE.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/images/awadh_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/assets/images/mooofarm_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/images/ASIDE.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/images/awadh_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/assets/images/mooofarm_banner.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/flutter_service_worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/web/main.dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/web/main.dart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_service_worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/NodeList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/NodeList.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.dart.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
