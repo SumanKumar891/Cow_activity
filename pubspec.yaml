@@ -80,6 +80,10 @@ dependencies:
   #file_saver: ^0.2.6
   #flutter_downloader: ^1.6.2
   flutter_windowmanager: ^0.2.0
+  #webview_flutter: ^2.0.8
+  #flutter_inappwebview: ^5.0.0
+  #flutter_html: ^2.0.0
+  webview_flutter: ^2.0.12
 
   #csv: ^4.0.4
 
@@ -132,6 +136,7 @@ flutter:
     - assets/en.json
     - assets/hi.json
     - assets/pa.json
+    - assets/terms_and_condition.html
     #- google_fonts/
     #- assets/images/logo2.jpeg
   # assets:

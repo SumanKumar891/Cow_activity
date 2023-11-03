@@ -363,7 +363,9 @@ file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/.dart_tool/flutter_build/a
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/DataFetchAPI.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/Login_register.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/NodeList.dart
+file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/about_us_page.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/dataTablePage.dart
+file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/help_and_support_page.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/main.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/src/enums/enums.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/src/enums/threat.dart
@@ -381,6 +383,7 @@ file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/src/typedefs.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/src/utils/config_verifier.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/src/utils/hash_converter.dart
 file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/src/utils/utils.dart
+file:///Users/sarthakjain/Desktop/GitHub/Cow_activity/lib/terms_and_conditions_page.dart
 file:///Users/sarthakjain/Developer/flutter/bin/cache/flutter_web_sdk/kernel/dart2js_platform.dill
 file:///Users/sarthakjain/Developer/flutter/packages/flutter/lib/animation.dart
 file:///Users/sarthakjain/Developer/flutter/packages/flutter/lib/cupertino.dart

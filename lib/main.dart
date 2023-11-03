@@ -29,6 +29,9 @@ export 'src/typedefs.dart';
 export 'src/utils/utils.dart' hide ConfigVerifier;
 
 
+import 'terms_and_conditions_page.dart';
+import 'help_and_support_page.dart';
+import 'about_us_page.dart';
 
 
 // void main() {
@@ -44,6 +47,7 @@ void main() async{
     androidConfig: AndroidConfig(
       packageName: 'test_web_app',
       signingCertHashes: [
+
         'NTE4ZDA3NmU2ZGNhZGVjZmFlNDVkMTI0M2RhNjAwOWU='
       ],
       supportedStores: ['some.other.store'],
@@ -130,7 +134,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<ThemeManager>(
         builder: (context, themeManager, child) {
           return MaterialApp(
-            title: 'Mooofarmsarthak',
+            title: 'Mooofarm',
             theme: ThemeData.light().copyWith(
               primaryColor: Colors.green, // Change the primary color
               primaryColorDark:
@@ -415,6 +419,265 @@ class _LoginPageState extends State<LoginPage>
 
                 ],
               ),
+
+              //tested OK
+              // Align(
+              //   alignment: Alignment.topRight,
+              //   child: BottomAppBar(
+              //     elevation: 0.0,
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //       children: [
+              //         Image.asset(
+              //           //'https://pbs.twimg.com/profile_images/1457950809623187463/N8F-A4xt_400x400.jpg',
+              //           'assets/images/awadhlogo.png',
+              //           width: 55,
+              //           height: 55,
+              //         ),
+              //
+              //
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('en')),
+              //           child:
+              //           Text(
+              //               'English',
+              //             style: GoogleFonts.kalam (
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               )),),
+              //         ),
+              //
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('hi')),
+              //           child: Text('हिंदी',
+              //             style: GoogleFonts.kalam (
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               )),)
+              //         ),
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('pa')),
+              //           child: Text('ਪੰਜਾਬੀ',
+              //             style: GoogleFonts.kalam (
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               )),),
+              //         ),
+              //         IconButton(
+              //           icon: Icon(
+              //             _isDarkMode ? Icons.light_mode : Icons.dark_mode,
+              //           ),
+              //           onPressed: themeManager.toggleTheme,
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+
+
+
+
+
+
+
+
+
+
+
+              // Align(
+              //   alignment: Alignment.topRight,
+              //   child: BottomAppBar(
+              //     elevation: 0.0,
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //       children: [
+              //         Image.asset(
+              //           'assets/images/awadhlogo.png',
+              //           width: 55,
+              //           height: 55,
+              //         ),
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('en')),
+              //           child: Text(
+              //             'English',
+              //             style: GoogleFonts.kalam(
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('hi')),
+              //           child: Text(
+              //             'हिंदी',
+              //             style: GoogleFonts.kalam(
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('pa')),
+              //           child: Text(
+              //             'ਪੰਜਾਬੀ',
+              //             style: GoogleFonts.kalam(
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         PopupMenuButton<String>(
+              //           onSelected: (value) {
+              //             if (value == 'theme') {
+              //               themeManager.toggleTheme();
+              //             } else if (value == 'terms_and_conditions') {
+              //               // Navigate to the Terms and Conditions page
+              //               Navigator.push(context, MaterialPageRoute(builder: (context) => TermsAndConditionsPage()));
+              //             } else if (value == 'help_and_support') {
+              //               // Navigate to the Help and Support page
+              //               Navigator.push(context, MaterialPageRoute(builder: (context) => HelpAndSupportPage()));
+              //             }
+              //           },
+              //           itemBuilder: (BuildContext context) {
+              //             return [
+              //               PopupMenuItem(
+              //                 value: 'theme',
+              //                 child: Text('Theme'),
+              //               ),
+              //               PopupMenuItem(
+              //                 value: 'terms_and_conditions',
+              //                 child: Text('Terms and Conditions'),
+              //               ),
+              //               PopupMenuItem(
+              //                 value: 'help_and_support',
+              //                 child: Text('Help and Support'),
+              //               ),
+              //             ];
+              //           },
+              //           child: IconButton(
+              //             icon: Icon(
+              //               Icons.settings_outlined,
+              //               color: Colors.green// Use the settings/gear icon
+              //             ),
+              //             onPressed: null, // Set to null to make the icon non-interactive
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+
+
+
+
+
+
+              // Align(
+              //   alignment: Alignment.topRight,
+              //   child: BottomAppBar(
+              //     elevation: 0.0,
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //       children: [
+              //         Image.asset(
+              //           'assets/images/awadhlogo.png',
+              //           width: 55,
+              //           height: 55,
+              //         ),
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('en')),
+              //           child: Text(
+              //             'English',
+              //             style: GoogleFonts.kalam(
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('hi')),
+              //           child: Text(
+              //             'हिंदी',
+              //             style: GoogleFonts.kalam(
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         TextButton(
+              //           onPressed: () => _changeLanguage(Locale('pa')),
+              //           child: Text(
+              //             'ਪੰਜਾਬੀ',
+              //             style: GoogleFonts.kalam(
+              //               textStyle: TextStyle(
+              //                 fontSize: 16.0,
+              //                 fontWeight: FontWeight.bold,
+              //                 color: Colors.green,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         PopupMenuButton<String>(
+              //           onSelected: (value) {
+              //             if (value == 'theme') {
+              //               themeManager.toggleTheme();
+              //             } else if (value == 'terms_and_conditions') {
+              //               // Navigate to the Terms and Conditions page
+              //               Navigator.push(context, MaterialPageRoute(builder: (context) => TermsAndConditionsPage()));
+              //             } else if (value == 'help_and_support') {
+              //               // Navigate to the Help and Support page
+              //               Navigator.push(context, MaterialPageRoute(builder: (context) => HelpAndSupportPage()));
+              //             }
+              //           },
+              //           itemBuilder: (BuildContext context) {
+              //             return [
+              //               PopupMenuItem(
+              //                 value: 'theme',
+              //                 child: Text('Switch Theme'),
+              //               ),
+              //               PopupMenuItem(
+              //                 value: 'terms_and_conditions',
+              //                 child: Text('Terms and Conditions'),
+              //               ),
+              //               PopupMenuItem(
+              //                 value: 'help_and_support',
+              //                 child: Text('Help and Support'),
+              //               ),
+              //             ];
+              //           },
+              //           child: Image.asset(
+              //             'assets/images/settings.png', // Replace with the actual path to your gear icon image
+              //             width: 60, // Set the width and height as needed
+              //             height: 60,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+
+
               Align(
                 alignment: Alignment.topRight,
                 child: BottomAppBar(
@@ -423,51 +686,91 @@ class _LoginPageState extends State<LoginPage>
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Image.asset(
-                        //'https://pbs.twimg.com/profile_images/1457950809623187463/N8F-A4xt_400x400.jpg',
                         'assets/images/awadhlogo.png',
                         width: 55,
                         height: 55,
                       ),
-
-
                       TextButton(
                         onPressed: () => _changeLanguage(Locale('en')),
-                        child:
-                        Text(
-                            'English',
-                          style: GoogleFonts.kalam (
+                        child: Text(
+                          'English',
+                          style: GoogleFonts.kalam(
                             textStyle: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                               color: Colors.green,
-                            )),),
+                            ),
+                          ),
+                        ),
                       ),
-
                       TextButton(
                         onPressed: () => _changeLanguage(Locale('hi')),
-                        child: Text('हिंदी',
-                          style: GoogleFonts.kalam (
+                        child: Text(
+                          'हिंदी',
+                          style: GoogleFonts.kalam(
                             textStyle: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                               color: Colors.green,
-                            )),)
+                            ),
+                          ),
+                        ),
                       ),
                       TextButton(
                         onPressed: () => _changeLanguage(Locale('pa')),
-                        child: Text('ਪੰਜਾਬੀ',
-                          style: GoogleFonts.kalam (
+                        child: Text(
+                          'ਪੰਜਾਬੀ',
+                          style: GoogleFonts.kalam(
                             textStyle: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                               color: Colors.green,
-                            )),),
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          _isDarkMode ? Icons.light_mode : Icons.dark_mode,
+                            ),
+                          ),
                         ),
-                        onPressed: themeManager.toggleTheme,
+                      ),
+                      PopupMenuButton<String>(
+                        onSelected: (value) {
+                          if (value == 'theme') {
+                            themeManager.toggleTheme();
+                          } else if (value == 'terms_and_conditions') {
+                            // Navigate to the Terms and Conditions page
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => TermsAndConditionsPage()));
+                          } else if (value == 'help_and_support') {
+                            // Navigate to the Help and Support page
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => HelpAndSupportPage()));
+                          } else if (value == 'about_us') {
+                            // Navigate to the About Us page
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => AboutUsPage()));
+                          }
+                        },
+                        itemBuilder: (BuildContext context) {
+                          return [
+                            PopupMenuItem(
+                              value: 'theme',
+                              child: Text('Switch Theme'),
+                            ),
+                            PopupMenuItem(
+                              value: 'about_us',
+                              child: Text('About Us'),
+                            ),
+
+                            PopupMenuItem(
+                              value: 'help_and_support',
+                              child: Text('Help and Support'),
+                            ),
+                            PopupMenuItem(
+                              value: 'terms_and_conditions',
+                              child: Text('Terms and Conditions'),
+                            ),
+
+                          ];
+                        },
+                        child: Image.asset(
+                          'assets/images/three_dots.png', // Replace with the actual path to your gear icon image
+                          width: 65, // Set the width and height as needed
+                          height: 65,
+                        ),
                       ),
                     ],
                   ),
@@ -475,22 +778,10 @@ class _LoginPageState extends State<LoginPage>
               ),
 
 
-              // Align(
-              //   alignment: Alignment.bottomLeft,
-              //   child: Padding(
-              //     padding: const EdgeInsets.all(16.0),
-              //     child:
-              //     ElevatedButton(
-              //       style: ElevatedButton.styleFrom(
-              //         primary: Colors.green,
-              //         shape: RoundedRectangleBorder(
-              //             borderRadius: BorderRadius.circular(70)),
-              //       ),
-              //       onPressed: downloadApkFile,
-              //       child: Text('Download APP'),
-              //     ),
-              //   ),
-              // ),
+
+
+
+
             ],
           ),
         ),
