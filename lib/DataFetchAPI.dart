@@ -30,44 +30,7 @@ class NewPage extends StatelessWidget {
             child: Icon(Icons.arrow_back)),
         title: Text(' '),
       ),
-      /*
-      body: Center(
-        //padding: EdgeInsets.all(65),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 20), // Add spacing below the button
-            //TableWidget(nodeId: nodeId),
-            SizedBox(height: 30),
-            Padding(
-              padding: EdgeInsets.all(60), // Add 20 units of padding
-              child: TableWidget(nodeId: nodeId),
-            ),
-            // Use the custom TableWidget to display the table
-          ],
-        ),
-      ),
-      */
-      /*
-      body: Center(
-        child: Card( // Wrap the Column with a Card widget
-          elevation: 8, // Add a shadow effect
-          margin: EdgeInsets.all(20), // Add margin for spacing
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
 
-            children: [
-              SizedBox(height: 20),
-              SizedBox(height: 30),
-              Padding(
-                padding: EdgeInsets.all(60), // Adjust padding as needed
-                child: TableWidget(nodeId: nodeId),
-              ),
-            ],
-          ),
-        ),
-      ),
-        */
       body: Center(
         child: Container(
           width: 500, // Set the width of the container
