@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5a86a6d-ae70-49c7-8901-ad0e8140490d" name="Changes" comment="" />
+    <list default="true" id="a5a86a6d-ae70-49c7-8901-ad0e8140490d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/dataTablePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dataTablePage.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
