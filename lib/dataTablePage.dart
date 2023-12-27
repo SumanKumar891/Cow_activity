@@ -145,7 +145,7 @@ class _AiDataFormState extends State<AiDataForm> {
                   ),
                 ),
                 SizedBox(width: 16.0),
-                
+
               ],
             ),
             SizedBox(height: 16.0),
