@@ -131,11 +131,11 @@ class CustomFloatingWindow extends StatelessWidget {
                     onPrimary: Colors.black,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Text(
                       'Heat',
                       style: TextStyle(
-                        fontSize: 14.0,
+                        fontSize: 8.0,
                       ),
                     ),
                   ),
