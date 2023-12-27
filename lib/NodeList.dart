@@ -48,6 +48,43 @@ class CustomFloatingWindow extends StatelessWidget {
   });
 
   @override
+  // Widget build(BuildContext context) {
+  //   return Card(
+  //     color: Colors.black12,
+  //     elevation: 8.0,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(12.0),
+  //     ),
+  //     child: Column(
+  //       children: [
+  //         Image.network(imagePath),
+  //         ListTile(
+  //           title: Text(
+  //             '$cowIdText : $nodeId',
+  //             style: GoogleFonts.kalam(
+  //               textStyle: TextStyle(
+  //                 fontSize: 14.0,
+  //                 color: Colors.white,
+  //               ),
+  //             ),
+  //           ),
+  //           trailing: ElevatedButton(
+  //             onPressed: onButtonPressed,
+  //             child: Text(
+  //               buttonText,
+  //               style: GoogleFonts.kalam(
+  //                 textStyle: TextStyle(
+  //                   fontSize: 14.0,
+  //                 ),
+  //               ),
+  //             ),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+
   Widget build(BuildContext context) {
     return Card(
       color: Colors.black12,
@@ -68,22 +105,50 @@ class CustomFloatingWindow extends StatelessWidget {
                 ),
               ),
             ),
-            trailing: ElevatedButton(
-              onPressed: onButtonPressed,
-              child: Text(
-                buttonText,
-                style: GoogleFonts.kalam(
-                  textStyle: TextStyle(
-                    fontSize: 14.0,
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  onPressed: onButtonPressed,
+                  child: Text(
+                    buttonText,
+                    style: GoogleFonts.kalam(
+                      textStyle: TextStyle(
+                        fontSize: 14.0,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                SizedBox(width: 8.0), // Add some spacing between buttons
+                ElevatedButton(
+                  onPressed: () {
+                    // Handle the "Heat" action here
+                    print('Heat action for Node ID: $nodeId');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    primary: Colors.yellow,
+                    onPrimary: Colors.black,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Heat',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
       ),
     );
   }
+
+
 }
 
 class _ThirdPageState extends State<ThirdPage> {
@@ -124,8 +189,42 @@ class _ThirdPageState extends State<ThirdPage> {
     }
   }
 
+  // Future<void> fetchCowStatus(String nodeID) async {
+  //   //String adjustedCowID = nodeID.toString();
+  //   print('Fetching status for Cow $nodeID');
+  //
+  //   try {
+  //     final response = await http.get(
+  //       Uri.parse(
+  //           'https://8rf04mrnia.execute-api.us-east-1.amazonaws.com/$nodeID'),
+  //     );
+  //
+  //     print('API Response Status Code: ${response.statusCode}'); // Debug print
+  //
+  //     if (response.statusCode == 200) {
+  //       final data = json.decode(response.body) as Map<String, dynamic>;
+  //       final status = data['status'] as String?;
+  //       print('Cow $nodeID - Status: $status'); // Debug print
+  //
+  //       // Check the status and only set it if it's '0'
+  //       if (status == '0') {
+  //         setState(() {
+  //           cowStatus[nodeID] =
+  //               status ?? '0'; // Use '0' as a default value if status is null
+  //         });
+  //       }
+  //     } else {
+  //       print('API Error for Cow $nodeID: ${response.body}'); // Debug print
+  //       // Handle API error for a specific cow here
+  //     }
+  //   } catch (e) {
+  //     print('Error fetching status for Cow $nodeID: $e'); // Debug print
+  //     // Handle the error gracefully (e.g., show a message to the user)
+  //   }
+  // }
+
+
   Future<void> fetchCowStatus(String nodeID) async {
-    //String adjustedCowID = nodeID.toString();
     print('Fetching status for Cow $nodeID');
 
     try {
@@ -158,6 +257,7 @@ class _ThirdPageState extends State<ThirdPage> {
     }
   }
 
+
   List<int> getCurrentPageNodeIds() {
     final startIndex = currentPage * 10;
     final endIndex = (currentPage + 1) * 10;
@@ -183,15 +283,24 @@ class _ThirdPageState extends State<ThirdPage> {
     }
   }
 
+  // void updateDisplayedCowIds() {
+  //   displayedCowIds.clear();
+  //   final currentPageNodeIds = getCurrentPageNodeIds();
+  //
+  //   for (var i = 0; i < currentPageNodeIds.length; i++) {
+  //     final displayedCowId = i + (currentPage * 10) + 1;
+  //     displayedCowIds.add(displayedCowId);
+  //   }
+  // }
+
   void updateDisplayedCowIds() {
     displayedCowIds.clear();
     final currentPageNodeIds = getCurrentPageNodeIds();
 
-    for (var i = 0; i < currentPageNodeIds.length; i++) {
-      final displayedCowId = i + (currentPage * 10) + 1;
-      displayedCowIds.add(displayedCowId);
-    }
+    // Use the original cow IDs without adjustment
+    displayedCowIds.addAll(currentPageNodeIds);
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -299,17 +408,226 @@ class _ThirdPageState extends State<ThirdPage> {
     }).toList();
   }
 
+  // Widget buildCustomFloatingWindow({
+  //   required String nodeID,
+  //   required BuildContext context,
+  // }) {
+  //   // Calculate the adjusted cow ID (nodeID + 100)
+  //   int adjustedCowID = int.parse(nodeID) ;
+  //
+  //   // Check the status of the cow (adjustedCowID) and set the color accordingly
+  //   Color windowColor = (cowStatus[adjustedCowID.toString()] == '0')
+  //       ? Colors.green
+  //       : Colors.red;
+  //
+  //   return Card(
+  //     color: windowColor,
+  //     elevation: 3.5,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(12.0),
+  //     ),
+  //     child: Column(
+  //       children: [
+  //         CustomFloatingWindow(
+  //           nodeId: nodeID,
+  //           imagePath: 'assets/images/tarantarancow1.jpeg',
+  //           buttonText: widget.appLocalizations.localizedValues['click_here'],
+  //           onButtonPressed: () {
+  //             print('Clicked on Node ID: $nodeID');
+  //             navigateToNewPage(
+  //               context,
+  //               adjustedCowID.toString(),
+  //               widget.appLocalizations,
+  //                 widget.email
+  //             );
+  //           },
+  //           cowIdText: widget.appLocalizations.localizedValues['cow_id'],
+  //           status: cowStatus[adjustedCowID.toString()] ?? '0',
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+
+
+  // Widget buildCustomFloatingWindow({
+  //   required String nodeID,
+  //   required BuildContext context,
+  // }) {
+  //   // Use the original cow ID without adjustment
+  //   int originalCowID = int.parse(nodeID);
+  //
+  //   // Check the status of the cow (originalCowID) and set the color accordingly
+  //   Color windowColor = (cowStatus[nodeID] == '0')
+  //       ? Colors.green
+  //       : Colors.red;
+  //
+  //   return Card(
+  //     color: windowColor,
+  //     elevation: 3.5,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(12.0),
+  //     ),
+  //     child: Column(
+  //       children: [
+  //         CustomFloatingWindow(
+  //           nodeId: nodeID,
+  //           imagePath: 'assets/images/tarantarancow1.jpeg',
+  //           buttonText: widget.appLocalizations.localizedValues['click_here'],
+  //           onButtonPressed: () {
+  //             print('Clicked on Node ID: $nodeID');
+  //             navigateToNewPage(
+  //               context,
+  //               originalCowID.toString(), // Use the original cow ID
+  //               widget.appLocalizations,
+  //               widget.email,
+  //             );
+  //           },
+  //           cowIdText: widget.appLocalizations.localizedValues['cow_id'],
+  //           status: cowStatus[nodeID] ?? '0',
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+
+
+  // Widget buildCustomFloatingWindow({
+  //   required String nodeID,
+  //   required BuildContext context,
+  // }) {
+  //   // Use the original cow ID without adjustment
+  //   int originalCowID = int.parse(nodeID);
+  //
+  //   // Check the status of the cow (originalCowID) and set the color accordingly
+  //   Color windowColor = (cowStatus[nodeID] == '0')
+  //       ? Colors.green
+  //       : Colors.red;
+  //
+  //   return Card(
+  //     color: windowColor,
+  //     elevation: 3.5,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(12.0),
+  //     ),
+  //     child: Column(
+  //       children: [
+  //         CustomFloatingWindow(
+  //           nodeId: nodeID,
+  //           imagePath: 'assets/images/tarantarancow1.jpeg',
+  //           buttonText: widget.appLocalizations.localizedValues['click_here'],
+  //           onButtonPressed: () {
+  //             print('Clicked on Node ID: $nodeID');
+  //             navigateToNewPage(
+  //               context,
+  //               originalCowID.toString(), // Use the original cow ID
+  //               widget.appLocalizations,
+  //               widget.email,
+  //             );
+  //           },
+  //           cowIdText: widget.appLocalizations.localizedValues['cow_id'],
+  //           status: cowStatus[nodeID] ?? '0',
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+
+
+  // Widget buildCustomFloatingWindow({
+  //   required String nodeID,
+  //   required BuildContext context,
+  // }) {
+  //   // Use the original cow ID without adjustment
+  //   int originalCowID = int.parse(nodeID);
+  //
+  //   // Check the status of the cow (originalCowID) and set the color accordingly
+  //   Color windowColor = (cowStatus[nodeID] == '0')
+  //       ? Colors.green
+  //       : Colors.red;
+  //
+  //   return Card(
+  //     color: windowColor,
+  //     elevation: 3.5,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(12.0),
+  //     ),
+  //     child: Column(
+  //       children: [
+  //         CustomFloatingWindow(
+  //           nodeId: nodeID,
+  //           imagePath: 'assets/images/tarantarancow1.jpeg',
+  //           buttonText: widget.appLocalizations.localizedValues['click_here'],
+  //           onButtonPressed: () {
+  //             print('Clicked on Node ID: $nodeID');
+  //             navigateToNewPage(
+  //               context,
+  //               originalCowID.toString(), // Use the original cow ID
+  //               widget.appLocalizations,
+  //               widget.email,
+  //             );
+  //           },
+  //           cowIdText: widget.appLocalizations.localizedValues['cow_id'],
+  //           status: cowStatus[nodeID] ?? '0',
+  //         ),
+  //
+  //
+  //       ],
+  //     ),
+  //   );
+  // }
+
+  // Widget buildCustomFloatingWindow({
+  //   required String nodeID,
+  //   required BuildContext context,
+  // }) {
+  //   // Use the original cow ID without adjustment
+  //   int originalCowID = int.parse(nodeID);
+  //
+  //   // Check the status of the cow (originalCowID) and set the color accordingly
+  //   Color windowColor = (cowStatus[nodeID] == '0')
+  //       ? Colors.green
+  //       : Colors.red;
+  //
+  //   return Card(
+  //     color: windowColor,
+  //     elevation: 3.5,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(12.0),
+  //     ),
+  //     child: Column(
+  //       children: [
+  //         CustomFloatingWindow(
+  //           nodeId: nodeID,
+  //           imagePath: 'assets/images/tarantarancow1.jpeg',
+  //           buttonText: widget.appLocalizations.localizedValues['click_here'],
+  //           onButtonPressed: () {
+  //             print('Clicked on Node ID: $nodeID');
+  //             navigateToNewPage(
+  //               context,
+  //               originalCowID.toString(), // Use the original cow ID
+  //               widget.appLocalizations,
+  //               widget.email,
+  //             );
+  //           },
+  //           cowIdText: widget.appLocalizations.localizedValues['cow_id'],
+  //           status: cowStatus[nodeID] ?? '0',
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+
+
   Widget buildCustomFloatingWindow({
     required String nodeID,
     required BuildContext context,
   }) {
-    // Calculate the adjusted cow ID (nodeID + 100)
-    int adjustedCowID = int.parse(nodeID) + 100;
+    // Use the original cow ID without adjustment
+    int originalCowID = int.parse(nodeID);
 
-    // Check the status of the cow (adjustedCowID) and set the color accordingly
-    Color windowColor = (cowStatus[adjustedCowID.toString()] == '0')
-        ? Colors.green
-        : Colors.red;
+    // Hardcode the card color to green
+    Color windowColor = Colors.green;
 
     return Card(
       color: windowColor,
@@ -327,18 +645,21 @@ class _ThirdPageState extends State<ThirdPage> {
               print('Clicked on Node ID: $nodeID');
               navigateToNewPage(
                 context,
-                adjustedCowID.toString(),
+                originalCowID.toString(), // Use the original cow ID
                 widget.appLocalizations,
-                  widget.email
+                widget.email,
               );
             },
             cowIdText: widget.appLocalizations.localizedValues['cow_id'],
-            status: cowStatus[adjustedCowID.toString()] ?? '0',
+            status: cowStatus[nodeID] ?? '0',
           ),
         ],
       ),
     );
   }
+
+
+
 
   void navigateToNewPage(
       BuildContext context, String nodeID, AppLocalizations appLocalizations, String email) {
