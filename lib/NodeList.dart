@@ -542,7 +542,7 @@ class _ThirdPageState extends State<ThirdPage> {
   //   int originalCowID = int.parse(nodeID);
   //
   //   // Check the status of the cow (originalCowID) and set the color accordingly
-  //   Color windowColor = (cowStatus[nodeID] == '0')
+  //   Color windowColor = (cowStatus[nodeID] == '1')
   //       ? Colors.green
   //       : Colors.red;
   //
@@ -576,6 +576,8 @@ class _ThirdPageState extends State<ThirdPage> {
   //     ),
   //   );
   // }
+  //
+
 
   // Widget buildCustomFloatingWindow({
   //   required String nodeID,
@@ -617,7 +619,7 @@ class _ThirdPageState extends State<ThirdPage> {
   //     ),
   //   );
   // }
-
+  //
 
   Widget buildCustomFloatingWindow({
     required String nodeID,

@@ -46,11 +46,172 @@ class AiDataForm extends StatefulWidget {
   _AiDataFormState createState() => _AiDataFormState();
 }
 
+//
+// class _AiDataFormState extends State<AiDataForm> {
+//   TextEditingController bullIdController = TextEditingController();
+//   TextEditingController aiDateController = TextEditingController();
+//   String selectedDataOfAi = '';
+//   String milkProductionFrequency = '';
+//   TextEditingController nextHeatDateController = TextEditingController();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Enter AI Data Form"),
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             TextField(
+//               controller: bullIdController,
+//               decoration: InputDecoration(labelText: 'Bull ID'),
+//             ),
+//             SizedBox(height: 16.0),
+//             Row(
+//               children: [
+//                 Expanded(
+//                   child: InkWell(
+//                     onTap: () {
+//                       _selectDate(context, aiDateController);
+//                     },
+//                     child: Row(
+//                       children: [
+//                         Icon(Icons.calendar_today),
+//                         SizedBox(width: 8.0),
+//                         Text(
+//                           aiDateController.text.isNotEmpty
+//                               ? aiDateController.text
+//                               : 'Select Date of AI',
+//                           style: TextStyle(fontSize: 16),
+//                         ),
+//                       ],
+//                     ),
+//                   ),
+//                 ),
+//                 SizedBox(width: 16.0),
+//               ],
+//             ),
+//             SizedBox(height: 16.0),
+//             Text('Select Data of AI:'),
+//             // Add your code for selecting AI data (e.g., dropdown or radio buttons)
+//             SizedBox(height: 16),
+//             Text('Milk Production:'),
+//             Row(
+//               children: [
+//                 Radio(
+//                   value: 'daily',
+//                   groupValue: milkProductionFrequency,
+//                   onChanged: (value) {
+//                     setState(() {
+//                       milkProductionFrequency = value.toString();
+//                     });
+//                   },
+//                 ),
+//                 Text('Daily'),
+//                 Radio(
+//                   value: 'weekly',
+//                   groupValue: milkProductionFrequency,
+//                   onChanged: (value) {
+//                     setState(() {
+//                       milkProductionFrequency = value.toString();
+//                     });
+//                   },
+//                 ),
+//                 Text('Weekly'),
+//                 Radio(
+//                   value: 'monthly',
+//                   groupValue: milkProductionFrequency,
+//                   onChanged: (value) {
+//                     setState(() {
+//                       milkProductionFrequency = value.toString();
+//                     });
+//                   },
+//                 ),
+//                 Text('Monthly'),
+//               ],
+//             ),
+//             SizedBox(height: 16.0),
+//             Row(
+//               children: [
+//                 Expanded(
+//                   child: Text(
+//                     'Next Heat Date: ${calculateNextHeatDate()}',
+//                     style: TextStyle(fontSize: 16),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//             SizedBox(height: 16.0),
+//             ElevatedButton(
+//               onPressed: () {
+//                 _submitForm();
+//                 Navigator.pop(context); // Navigate back to the previous screen
+//               },
+//               child: Text('Submit'),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+//
+//   Future<void> _selectDate(
+//       BuildContext context, TextEditingController controller) async {
+//     final DateTime? picked = await showDatePicker(
+//       context: context,
+//       initialDate: DateTime.now(),
+//       firstDate: DateTime(2000),
+//       lastDate: DateTime(2101),
+//     );
+//     if (picked != null) {
+//       setState(() {
+//         controller.text = '${DateFormat('dd/MM/yyyy').format(picked)}';
+//       });
+//     }
+//   }
+//
+//   void _submitForm() {
+//     // Implement the logic for submitting the form data
+//     print('Bull ID: ${bullIdController.text}');
+//     print('Date of AI: ${aiDateController.text}');
+//     print('Data of AI: $selectedDataOfAi');
+//     print('Milk Production: $milkProductionFrequency');
+//     print('Next Heat Date: ${nextHeatDateController.text}');
+//   }
+//
+//   // String calculateNextHeatDate() {
+//   //   DateTime? selectedDate = DateFormat('dd/MM/yyyy').parse(aiDateController.text, true);
+//   //   if (selectedDate != null) {
+//   //     DateTime nextHeatDate = selectedDate.add(Duration(days: 21));
+//   //     return DateFormat('dd/MM/yyyy').format(nextHeatDate);
+//   //   }
+//   //   return 'Invalid Date';
+//   // }
+//
+//   String calculateNextHeatDate() {
+//     if (aiDateController.text.isEmpty) {
+//       return 'Select Date of AI first';
+//     }
+//
+//     try {
+//       DateTime selectedDate = DateFormat('dd/MM/yyyy').parse(aiDateController.text);
+//       DateTime nextHeatDate = selectedDate.add(Duration(days: 21));
+//       return DateFormat('dd/MM/yyyy').format(nextHeatDate);
+//     } catch (e) {
+//       return 'Invalid Date Format';
+//     }
+//   }
+//
+//
+// }
 class _AiDataFormState extends State<AiDataForm> {
   TextEditingController bullIdController = TextEditingController();
   TextEditingController aiDateController = TextEditingController();
+  TextEditingController milkProductionController = TextEditingController();
   String selectedDataOfAi = '';
-  String milkProductionFrequency = '';
   TextEditingController nextHeatDateController = TextEditingController();
 
   @override
@@ -66,7 +227,7 @@ class _AiDataFormState extends State<AiDataForm> {
           children: [
             TextField(
               controller: bullIdController,
-              decoration: InputDecoration(labelText: 'Bull ID'),
+              decoration: InputDecoration(labelText: 'Enter Bull ID'),
             ),
             SizedBox(height: 16.0),
             Row(
@@ -91,68 +252,31 @@ class _AiDataFormState extends State<AiDataForm> {
                   ),
                 ),
                 SizedBox(width: 16.0),
-
               ],
             ),
             SizedBox(height: 16.0),
             Text('Select Data of AI:'),
             // Add your code for selecting AI data (e.g., dropdown or radio buttons)
             SizedBox(height: 16),
-            Text('Milk Production:'),
-            Row(
-              children: [
-                Radio(
-                  value: 'daily',
-                  groupValue: milkProductionFrequency,
-                  onChanged: (value) {
-                    setState(() {
-                      milkProductionFrequency = value.toString();
-                    });
-                  },
-                ),
-                Text('Daily'),
-                Radio(
-                  value: 'weekly',
-                  groupValue: milkProductionFrequency,
-                  onChanged: (value) {
-                    setState(() {
-                      milkProductionFrequency = value.toString();
-                    });
-                  },
-                ),
-                Text('Weekly'),
-                Radio(
-                  value: 'monthly',
-                  groupValue: milkProductionFrequency,
-                  onChanged: (value) {
-                    setState(() {
-                      milkProductionFrequency = value.toString();
-                    });
-                  },
-                ),
-                Text('Monthly'),
-              ],
+            TextField(
+              controller: milkProductionController,
+              decoration: InputDecoration(labelText: 'Milk Production'),
             ),
             SizedBox(height: 16.0),
             Row(
               children: [
                 Expanded(
-                  child: TextField(
-                    controller: nextHeatDateController,
-                    decoration: InputDecoration(
-                      labelText: 'Next Heat Date',
-                    ),
+                  child: Text(
+                    'Tentative next heat date: ${calculateNextHeatDate()}',
+                    style: TextStyle(fontSize: 16),
                   ),
                 ),
-                SizedBox(width: 16.0),
-
               ],
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                _submitForm();
-                Navigator.pop(context); // Navigate back to the previous screen
+                // Navigate back to the previous screen
               },
               child: Text('Submit'),
             ),
@@ -182,12 +306,24 @@ class _AiDataFormState extends State<AiDataForm> {
     print('Bull ID: ${bullIdController.text}');
     print('Date of AI: ${aiDateController.text}');
     print('Data of AI: $selectedDataOfAi');
-    print('Milk Production: $milkProductionFrequency');
+    print('Milk Production: ${milkProductionController.text}');
     print('Next Heat Date: ${nextHeatDateController.text}');
   }
+
+  String calculateNextHeatDate() {
+    if (aiDateController.text.isEmpty) {
+      return 'Select Date of AI first';
+    }
+
+    try {
+      DateTime selectedDate = DateFormat('dd/MM/yyyy').parse(aiDateController.text);
+      DateTime nextHeatDate = selectedDate.add(Duration(days: 21));
+      return DateFormat('dd/MM/yyyy').format(nextHeatDate);
+    } catch (e) {
+      return 'Invalid Date Format';
+    }
+  }
 }
-
-
 
 class DataTablePage extends StatelessWidget {
   final List<dynamic> response;
