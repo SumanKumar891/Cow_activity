@@ -207,12 +207,16 @@ class AiDataForm extends StatefulWidget {
 //
 //
 // }
+
+
+
 class _AiDataFormState extends State<AiDataForm> {
   TextEditingController bullIdController = TextEditingController();
   TextEditingController aiDateController = TextEditingController();
   TextEditingController milkProductionController = TextEditingController();
   String selectedDataOfAi = '';
   TextEditingController nextHeatDateController = TextEditingController();
+  String selectedFrequency = '';
 
   @override
   Widget build(BuildContext context) {
@@ -258,11 +262,76 @@ class _AiDataFormState extends State<AiDataForm> {
             Text('Select Data of AI:'),
             // Add your code for selecting AI data (e.g., dropdown or radio buttons)
             SizedBox(height: 16),
-            TextField(
-              controller: milkProductionController,
-              decoration: InputDecoration(labelText: 'Milk Production'),
+            // TextField(
+            //   controller: milkProductionController,
+            //   decoration: InputDecoration(labelText: 'Milk Production'),
+            // ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Enter Milk production '),
+                SizedBox(height: 8),
+                TextField(
+                  controller: milkProductionController,
+                  decoration: InputDecoration(labelText: 'Enter'),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 16),
+
+// Row for Frequency selection
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Select Frequency:'),
+                SizedBox(height: 8),
+                Row(
+                  children: [
+                    Radio(
+                      value: 'daily',
+                      groupValue: selectedFrequency,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedFrequency = value as String;
+                        });
+                      },
+                    ),
+                    Text('Daily'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Radio(
+                      value: 'weekly',
+                      groupValue: selectedFrequency,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedFrequency = value as String;
+                        });
+                      },
+                    ),
+                    Text('Weekly'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Radio(
+                      value: 'monthly',
+                      groupValue: selectedFrequency,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedFrequency = value as String;
+                        });
+                      },
+                    ),
+                    Text('Monthly'),
+                  ],
+                ),
+              ],
             ),
             SizedBox(height: 16.0),
+
             Row(
               children: [
                 Expanded(
